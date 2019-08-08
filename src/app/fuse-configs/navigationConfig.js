@@ -163,7 +163,8 @@ const navigationConfig = [
                 'id'   : 'login-v2',
                 'title': 'Login v2',
                 'type' : 'item',
-                'url'  : '/pages/auth/login-2'
+                'url': '/pages/auth/login-2',
+                //auth: authRoles.onlyGuest,
             },
             {
                 'id'   : 'authentication-register-v2',
@@ -181,7 +182,8 @@ const navigationConfig = [
                 'id'   : 'authentication-reset-password-v2',
                 'title': 'Reset Password v2',
                 'type' : 'item',
-                'url'  : '/pages/auth/reset-password-2'
+                'url': '/pages/auth/reset-password-2',
+                
             },
             {
                 'id'   : 'authentication-lock-screen',
