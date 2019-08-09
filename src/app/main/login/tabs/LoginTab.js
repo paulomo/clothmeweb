@@ -1,12 +1,23 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Button, Divider, Typography, InputAdornment, Icon} from '@material-ui/core';
+import { Button, InputAdornment, Icon, Checkbox, FormControl, FormControlLabel } from '@material-ui/core';
 import {TextFieldFormsy} from '@fuse';
 import Formsy from 'formsy-react';
+import { useForm } from '@fuse/hooks';
 import * as authActions from 'app/auth/store/actions';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 
 function LoginTab(props)
 {
+
+    const { form, handleChange, resetForm } = useForm({
+        email: '',
+        password: '',
+        remember: true
+    });
+
+
     const dispatch = useDispatch();
     const login = useSelector(({auth}) => auth.login);
 
@@ -82,6 +93,26 @@ function LoginTab(props)
                     variant="outlined"
                     required
                 />
+
+                <div className="flex items-center justify-between">
+
+                    <FormControl>
+                        <FormControlLabel
+                            control={
+                                <Checkbox
+                                    name="remember"
+                                    checked={form.remember}
+                                    onChange={handleChange}
+                                />
+                            }
+                            label="Remember Me"
+                        />
+                    </FormControl>
+
+                    <Link className="font-medium" to="/pages/auth/forgot-password">
+                        Forgot Password?
+                    </Link>
+                </div>
 
                 <Button
                     type="submit"

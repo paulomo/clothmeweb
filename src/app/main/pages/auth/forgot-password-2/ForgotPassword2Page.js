@@ -38,21 +38,9 @@ function ForgotPassword2Page()
             <div className="flex flex-col flex-grow-0 items-center text-white p-16 text-center md:p-128 md:items-start md:flex-shrink-0 md:flex-1 md:text-left">
 
                 <FuseAnimate animation="transition.expandIn">
-                    <img className="w-128 mb-32" src="assets/images/logos/fuse.svg" alt="logo"/>
+                    <img className="w-128 mb-32" src="" alt=""/>
                 </FuseAnimate>
 
-                <FuseAnimate animation="transition.slideUpIn" delay={300}>
-                    <Typography variant="h3" color="inherit" className="font-light">
-                        Welcome to the FUSE!
-                    </Typography>
-                </FuseAnimate>
-
-                <FuseAnimate delay={400}>
-                    <Typography variant="subtitle1" color="inherit" className="max-w-512 mt-16">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper nisl erat, vel convallis elit fermentum pellentesque. Sed mollis velit
-                        facilisis facilisis.
-                    </Typography>
-                </FuseAnimate>
             </div>
 
             <FuseAnimate animation={{translateX: [0, '100%']}}>
@@ -97,7 +85,7 @@ function ForgotPassword2Page()
                         </form>
 
                         <div className="flex flex-col items-center justify-center pt-32 pb-24">
-                            <Link className="font-medium" to="/pages/auth/login-2">Go back to login</Link>
+                            <Link className="font-medium" to="/login">Go back to login</Link>
                         </div>
 
                     </CardContent>

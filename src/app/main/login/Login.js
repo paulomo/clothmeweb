@@ -54,7 +54,8 @@ function Login()
                         >
                         </div>
 
-                        <LoginTab/>
+                        <LoginTab />
+
 
                         <div className="flex flex-col items-center justify-center pt-32">
                             <span className="font-medium">Don't have an account?

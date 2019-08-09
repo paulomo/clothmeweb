@@ -147,7 +147,8 @@ const navigationConfig = [
           {
               'id'   : 'wallet',
               'title': 'Wallet',
-              'type' : 'item',
+              'type': 'item',
+              'auth' : authRoles.admin,
               'icon' : 'account_balance_wallet',
               'url'  : '/pages/maintenance'
           },
@@ -159,19 +160,6 @@ const navigationConfig = [
         'type'    : 'group',
         'icon'    : 'pages',
         'children': [
-            {
-                'id'   : 'login-v2',
-                'title': 'Login v2',
-                'type' : 'item',
-                'url': '/pages/auth/login-2',
-                //auth: authRoles.onlyGuest,
-            },
-            {
-                'id'   : 'authentication-register-v2',
-                'title': 'Register v2',
-                'type' : 'item',
-                'url'  : '/pages/auth/register-2'
-            },
             {
                 'id'   : 'authentication-forgot-password-v2',
                 'title': 'Forgot Password v2',
