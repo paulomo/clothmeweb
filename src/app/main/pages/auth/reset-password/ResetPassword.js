@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function ResetPasswordPage2()
+function ResetPassword()
 {
     const classes = useStyles();
 
@@ -49,19 +49,7 @@ function ResetPasswordPage2()
                 <FuseAnimate animation="transition.expandIn">
                     <img className="w-128 mb-32" src="assets/images/logos/fuse.svg" alt="logo"/>
                 </FuseAnimate>
-
-                <FuseAnimate animation="transition.slideUpIn" delay={300}>
-                    <Typography variant="h3" color="inherit" className="font-light">
-                        Welcome to the FUSE!
-                    </Typography>
-                </FuseAnimate>
-
-                <FuseAnimate delay={400}>
-                    <Typography variant="subtitle1" color="inherit" className="max-w-512 mt-16">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper nisl erat, vel convallis elit fermentum pellentesque. Sed mollis velit
-                        facilisis facilisis.
-                    </Typography>
-                </FuseAnimate>
+                
             </div>
 
             <FuseAnimate animation={{translateX: [0, '100%']}}>
@@ -140,4 +128,4 @@ function ResetPasswordPage2()
     );
 }
 
-export default ResetPasswordPage2;
+export default ResetPassword;
