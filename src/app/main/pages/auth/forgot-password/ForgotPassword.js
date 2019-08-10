@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function ForgotPassword2Page()
+function ForgotPassword()
 {
     const classes = useStyles();
     const {form, handleChange, resetForm} = useForm({
@@ -95,4 +95,4 @@ function ForgotPassword2Page()
     );
 }
 
-export default ForgotPassword2Page;
+export default ForgotPassword;

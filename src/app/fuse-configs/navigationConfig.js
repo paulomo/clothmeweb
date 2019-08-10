@@ -164,13 +164,13 @@ const navigationConfig = [
                 'id'   : 'authentication-forgot-password-v2',
                 'title': 'Forgot Password v2',
                 'type' : 'item',
-                'url'  : '/pages/auth/forgot-password-2'
+                'url'  : '/pages/auth/forgot-password'
             },
             {
                 'id'   : 'authentication-reset-password-v2',
                 'title': 'Reset Password v2',
                 'type' : 'item',
-                'url': '/pages/auth/reset-password-2',
+                'url': '/pages/auth/reset-password',
                 
             },
             {
