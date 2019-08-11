@@ -47,6 +47,10 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+// measurement options
+const measurementOptions = ['Top Measurement', 'Bottom Measurement', 'Full Body Measurement', 'Feet Measurment'];
+
+
 function Product(props)
 {
     const dispatch = useDispatch();
@@ -54,7 +58,14 @@ function Product(props)
 
     const classes = useStyles(props);
     const [tabValue, setTabValue] = useState(0);
-    const {form, handleChange, setForm} = useForm(null);
+    const { form, handleChange, setForm } = useForm(null);
+    
+    // state for the measurement
+    const [measurementOption, setMeasurementOption] = useState([measurementOptions])
+    function handleMeasurement(event, value)
+    {
+        setMeasurementOption(value);
+    }
 
     useEffect(() => {
         function updateProductState()
@@ -289,7 +300,7 @@ function Product(props)
                             <FuseChipSelect
                                 className="mt-8 mb-24"
                                 value={
-                                    form.categories.map(item => ({
+                                    measurementOption.map(item => ({
                                         value: item,
                                         label: item
                                     }))
@@ -306,7 +317,7 @@ function Product(props)
                                 isMulti
                             />
 
-                          <div className="flex">
+                                {/*<div className="flex">
                             <TextField
                                 className="mt-8 mb-16 mr-8"
                                 label="Width"
@@ -341,7 +352,7 @@ function Product(props)
                                 fullWidth
                             />
                         </div>
-                        <div className="flex">
+                                <div className="flex">
                           <TextField
                               className="mt-8 mb-16 mr-8"
                               label="Width"
@@ -376,9 +387,8 @@ function Product(props)
                               fullWidth
                           />
 
-                      </div>
+                            </div>*/}
                     </div>
-
 
                         )}
                         {tabValue === 2 && (
