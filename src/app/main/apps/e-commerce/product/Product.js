@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Tab, Tabs, TextField, InputAdornment, Icon, Typography, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel} from '@material-ui/core';
+import { Button, Tab, Tabs, TextField, InputAdornment, InputLabel, Icon, Typography, Radio, OutlinedInput, Select, MenuItem, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@material-ui/core';
+// import OutlinedInput from '@material-ui/core/OutlinedInput';
 import {orange} from '@material-ui/core/colors';
 import {makeStyles} from '@material-ui/styles';
 import {FuseAnimate, FusePageCarded, FuseChipSelect, FuseUtils} from '@fuse';
@@ -48,7 +49,12 @@ const useStyles = makeStyles(theme => ({
 }));
 
 // measurement options
-const measurementOptions = ['Top Measurement', 'Bottom Measurement', 'Full Body Measurement', 'Feet Measurment'];
+const measurementOptions = [
+    { 'value': 'top', 'display': 'Top Measurement' },
+    { 'value': 'bottom', 'display': 'Bottom Measurement' },
+    { 'value': 'fullbody', 'display': 'Full Body Measurement' },
+    { 'value': 'feet', 'display': 'Feet Measurment' }
+];
 
 
 function Product(props)
@@ -61,11 +67,18 @@ function Product(props)
     const { form, handleChange, setForm } = useForm(null);
     
     // state for the measurement
-    const [measurementOption, setMeasurementOption] = useState([measurementOptions])
-    function handleMeasurement(event, value)
-    {
-        setMeasurementOption(value);
-    }
+    const inputLabel = React.useRef(null);
+    const [labelWidth, setLabelWidth] = useState(0);
+    React.useEffect(() => {
+        //setLabelWidth(inputLabel.current.offsetWidth);
+    }, []);
+    const [selectedOption, setSelectedOption] = useState('');
+    
+    // const [measurementOption, setMeasurementOption] = useState([measurementOptions])
+    // function handleMeasurement(event, value)
+    // {
+    //     setMeasurementOption(value);
+    // }
 
     useEffect(() => {
         function updateProductState()
@@ -196,6 +209,14 @@ function Product(props)
                                 Save
                             </Button>
                         </FuseAnimate>
+                        <Button
+                            className="whitespace-no-wrap"
+                            variant="contained"
+                            disabled={!canBeSubmitted()}
+                            onClick={() => {}}
+                        >
+                            Publish
+                            </Button>
                     </div>
                 )
             }
@@ -292,12 +313,95 @@ function Product(props)
                                     isMulti
                                     required
                                 />
+
+                                <FuseChipSelect
+                                    className="mt-8 mb-16"
+                                    value={
+                                        form.tags.map(item => ({
+                                            value: item,
+                                            label: item
+                                        }))
+                                    }
+                                    onChange={(value) => handleChipChange(value, 'tags')}
+                                    placeholder="Select multiple tags"
+                                    textFieldProps={{
+                                        label: 'Tags',
+                                        InputLabelProps: {
+                                            shrink: true
+                                        },
+                                        variant: 'outlined'
+                                    }}
+                                    isMulti
+                                    required
+                                />
+
+                                <FuseChipSelect
+                                    className="mt-8 mb-16"
+                                    value={
+                                        form.tags.map(item => ({
+                                            value: item,
+                                            label: item
+                                        }))
+                                    }
+                                    onChange={(value) => handleChipChange(value, 'tags')}
+                                    placeholder="Select multiple tags"
+                                    textFieldProps={{
+                                        label: 'Tags',
+                                        InputLabelProps: {
+                                            shrink: true
+                                        },
+                                        variant: 'outlined'
+                                    }}
+                                    isMulti
+                                    required
+                                />
+
+                                <FuseChipSelect
+                                    className="mt-8 mb-16"
+                                    value={
+                                        form.tags.map(item => ({
+                                            value: item,
+                                            label: item
+                                        }))
+                                    }
+                                    onChange={(value) => handleChipChange(value, 'tags')}
+                                    placeholder="Select multiple tags"
+                                    textFieldProps={{
+                                        label: 'Tags',
+                                        InputLabelProps: {
+                                            shrink: true
+                                        },
+                                        variant: 'outlined'
+                                    }}
+                                    isMulti
+                                    required
+                                />
                             </div>
                         )}
                         {tabValue === 1 && (
-                          <div>
+                            <div>
+                                <Select
+                                    fullWidth
+                                    label="Select Measurement Option"
+                                    name="measurementOption"
+                                    SelectProps={{ native: true }}
+                                    value={selectedOption}
+                                    variant="outlined"
+                                    required
+                                    select
+                                    //onChange={handleMeasurement}
+                                >
+                                {measurementOptions.map(option => (
+                                    <option
+                                        key={option.value}
+                                        value={option.value}
+                                    >
+                                        {option.display}
+                                    </option>
+                                ))}
+                                </Select> 
 
-                            <FuseChipSelect
+                                {/*<FuseChipSelect
                                 className="mt-8 mb-24"
                                 value={
                                     measurementOption.map(item => ({
@@ -317,7 +421,7 @@ function Product(props)
                                 isMulti
                             />
 
-                                {/*<div className="flex">
+                                <div className="flex">
                             <TextField
                                 className="mt-8 mb-16 mr-8"
                                 label="Width"
