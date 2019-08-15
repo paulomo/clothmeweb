@@ -66,28 +66,21 @@ function ProfilePage()
                         classes={{
                             root: "h-64"
                         }}
-                        label="Timeline"/>
+                        label="About"/>
                     <Tab
                         classes={{
                             root: "h-64"
-                        }} label="About"/>
-                    <Tab
-                        classes={{
-                            root: "h-64"
-                        }} label="Photos & Videos"/>
+                        }} label="Timeline"/>
                 </Tabs>
             }
             content={
                 <div className="p-16 sm:p-24">
                     {selectedTab === 0 &&
                     (
-                        <TimelineTab/>
+                        <AboutTab />
                     )}
                     {selectedTab === 1 && (
-                        <AboutTab/>
-                    )}
-                    {selectedTab === 2 && (
-                        <PhotosVideosTab/>
+                        <TimelineTab />
                     )}
                 </div>
             }

@@ -7,9 +7,9 @@ function RightSideLayout1(props)
     return (
         <React.Fragment>
 
-            <ChatPanel/>
+            {/*<ChatPanel/>*/}
 
-            <QuickPanel/>
+            {/*<QuickPanel/>*/}
         </React.Fragment>
     );
 }

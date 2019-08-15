@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Tab, Tabs, TextField, InputAdornment, Icon, Typography, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel} from '@material-ui/core';
+import { Button, Tab, Tabs, TextField, InputAdornment, InputLabel, Icon, Typography, Radio, OutlinedInput, MenuItem, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@material-ui/core';
+// import OutlinedInput from '@material-ui/core/OutlinedInput';
+import Select from 'react-select';
 import {orange} from '@material-ui/core/colors';
 import {makeStyles} from '@material-ui/styles';
 import {FuseAnimate, FusePageCarded, FuseChipSelect, FuseUtils} from '@fuse';
@@ -11,6 +13,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import withReducer from 'app/store/withReducer';
 import * as Actions from '../store/actions';
 import reducer from '../store/reducers';
+
+import BasicInfo from './tabs/basic-info';
+import ProductImage from './tabs/product-image';
+
 
 const useStyles = makeStyles(theme => ({
     productImageFeaturedStar: {
@@ -48,7 +54,12 @@ const useStyles = makeStyles(theme => ({
 }));
 
 // measurement options
-const measurementOptions = ['Top Measurement', 'Bottom Measurement', 'Full Body Measurement', 'Feet Measurment'];
+const measurementOptions = [
+    { 'value': 'top', 'lable': 'Top Measurement' },
+    { 'value': 'bottom', 'label': 'Bottom Measurement' },
+    { 'value': 'fullbody', 'label': 'Full Body Measurement' },
+    { 'value': 'feet', 'label': 'Feet Measurment' }
+];
 
 
 function Product(props)
@@ -61,12 +72,13 @@ function Product(props)
     const { form, handleChange, setForm } = useForm(null);
     
     // state for the measurement
-    const [measurementOption, setMeasurementOption] = useState([measurementOptions])
-    function handleMeasurement(event, value)
-    {
-        setMeasurementOption(value);
-    }
-
+    const inputLabel = React.useRef(null);
+    const [labelWidth, setLabelWidth] = useState(0);
+    React.useEffect(() => {
+        //setLabelWidth(inputLabel.current.offsetWidth);
+    }, []);
+    const [selectedOption, setSelectedOption] = useState('');
+    
     useEffect(() => {
         function updateProductState()
         {
@@ -196,6 +208,14 @@ function Product(props)
                                 Save
                             </Button>
                         </FuseAnimate>
+                        <Button
+                            className="whitespace-no-wrap"
+                            variant="contained"
+                            disabled={!canBeSubmitted()}
+                            onClick={() => {}}
+                        >
+                            Publish
+                            </Button>
                     </div>
                 )
             }
@@ -221,83 +241,29 @@ function Product(props)
                 form && (
                     <div className="p-16 sm:p-24 max-w-2xl">
                         {tabValue === 0 &&
-                        (
-                            <div>
-
-                                <TextField
-                                    className="mt-8 mb-16"
-                                    error={form.name === ''}
-                                    required
-                                    label="Name"
-                                    autoFocus
-                                    id="name"
-                                    name="name"
-                                    value={form.name}
-                                    onChange={handleChange}
-                                    variant="outlined"
-                                    fullWidth
-                                />
-
-                                <TextField
-                                    className="mt-8 mb-16"
-                                    id="description"
-                                    name="description"
-                                    onChange={handleChange}
-                                    label="Description"
-                                    type="text"
-                                    value={form.description}
-                                    multiline
-                                    rows={5}
-                                    variant="outlined"
-                                    fullWidth
-                                />
-
-                                <FuseChipSelect
-                                    className="mt-8 mb-24"
-                                    value={
-                                        form.categories.map(item => ({
-                                            value: item,
-                                            label: item
-                                        }))
-                                    }
-                                    onChange={(value) => handleChipChange(value, 'categories')}
-                                    placeholder="Select multiple categories"
-                                    textFieldProps={{
-                                        label          : 'Categories',
-                                        InputLabelProps: {
-                                            shrink: true
-                                        },
-                                        variant        : 'outlined'
-                                    }}
-                                    isMulti
-                                />
-
-                                <FuseChipSelect
-                                    className="mt-8 mb-16"
-                                    value={
-                                        form.tags.map(item => ({
-                                            value: item,
-                                            label: item
-                                        }))
-                                    }
-                                    onChange={(value) => handleChipChange(value, 'tags')}
-                                    placeholder="Select multiple tags"
-                                    textFieldProps={{
-                                        label          : 'Tags',
-                                        InputLabelProps: {
-                                            shrink: true
-                                        },
-                                        variant        : 'outlined'
-                                    }}
-                                    isMulti
-                                    required
-                                />
-                            </div>
-                        )}
+                            (<BasicInfo
+                            form={form}
+                            handleChange={handleChange}
+                            handleChipChange={handleChipChange}
+                            />)
+                        }
+                        
                         {tabValue === 1 && (
-                          <div>
+                            <div>
+                                <Select
+                                    fullWidth
+                                    label="Select Measurement Option"
+                                    name="measurementOption"
+                                    SelectProps={{ native: true }}
+                                    value={selectedOption}
+                                    variant="outlined"
+                                    required
+                                    select
+                                    options={measurementOptions}
+                                    //onChange={handleMeasurement}
+                                />
 
-                            <FuseChipSelect
+                                {/*<FuseChipSelect
                                 className="mt-8 mb-24"
                                 value={
                                     measurementOption.map(item => ({
@@ -317,7 +283,7 @@ function Product(props)
                                 isMulti
                             />
 
-                                {/*<div className="flex">
+                                <div className="flex">
                             <TextField
                                 className="mt-8 mb-16 mr-8"
                                 label="Width"
@@ -392,43 +358,13 @@ function Product(props)
 
                         )}
                         {tabValue === 2 && (
-                            <div>
-                                <input
-                                    accept="image/*"
-                                    className="hidden"
-                                    id="button-file"
-                                    type="file"
-                                    onChange={handleUploadChange}
-                                />
-                                <div className="flex justify-center sm:justify-start flex-wrap">
-                                    <label
-                                        htmlFor="button-file"
-                                        className={
-                                            clsx(
-                                                classes.productImageUpload,
-                                                "flex items-center justify-center relative w-128 h-128 rounded-4 mr-16 mb-16 overflow-hidden cursor-pointer shadow-1 hover:shadow-5"
-                                            )}
-                                    >
-                                        <Icon fontSize="large" color="action">cloud_upload</Icon>
-                                    </label>
-                                    {form.images.map(media => (
-                                        <div
-                                            onClick={() => setFeaturedImage(media.id)}
-                                            className={
-                                                clsx(
-                                                    classes.productImageItem,
-                                                    "flex items-center justify-center relative w-128 h-128 rounded-4 mr-16 mb-16 overflow-hidden cursor-pointer shadow-1 hover:shadow-5",
-                                                    (media.id === form.featuredImageId) && 'featured')
-                                            }
-                                            key={media.id}
-                                        >
-                                            <Icon className={classes.productImageFeaturedStar}>star</Icon>
-                                            <img className="max-w-none w-auto h-full" src={media.url} alt="product"/>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
+                            <ProductImage
+                                form={form}
+                                classes={classes}
+                                handleUploadChange={handleUploadChange}
+                                setFeaturedImage={setFeaturedImage}
+                            />)
+                        }
                         {tabValue === 3 && (
                             <div>
 

@@ -11,7 +11,6 @@ import {CompactInvoicePageConfig} from './invoices/compact/CompactInvoicePageCon
 import {ProfilePageConfig} from './profile/ProfilePageConfig';
 import {ClassicSearchPageConfig} from './search/classic/ClassicSearchPageConfig';
 import {ModernSearchPageConfig} from './search/modern/ModernSearchPageConfig';
-import {FaqPageConfig} from './faq/FaqPageConfig';
 import {KnowledgeBasePageConfig} from './knowledge-base/KnowledgeBaseConfig';
 
 export const pagesConfigs = [
@@ -28,6 +27,5 @@ export const pagesConfigs = [
     ProfilePageConfig,
     ClassicSearchPageConfig,
     ModernSearchPageConfig,
-    FaqPageConfig,
     KnowledgeBasePageConfig
 ];
