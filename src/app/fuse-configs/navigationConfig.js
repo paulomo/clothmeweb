@@ -44,13 +44,13 @@ const navigationConfig = [
               'url'  : '/apps/e-commerce/orders',
               'exact': true
           },
-          {
-              'id'   : 'e-commerce-orders',
-              'title': 'Orders',
-              'type' : 'item',
-              'url'  : '/apps/e-commerce/orders',
-              'exact': true
-          }
+        //   {
+        //       'id'   : 'e-commerce-orders',
+        //       'title': 'Orders',
+        //       'type' : 'item',
+        //       'url'  : '/apps/e-commerce/orders',
+        //       'exact': true
+        //   }
         ]
     },
     {

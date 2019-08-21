@@ -1,537 +1,201 @@
-import React, {useEffect, useState} from 'react';
-import { Button, Tab, Tabs, TextField, InputAdornment, InputLabel, Icon, Typography, Radio, OutlinedInput, MenuItem, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@material-ui/core';
-// import OutlinedInput from '@material-ui/core/OutlinedInput';
-import Select from 'react-select';
-import {orange} from '@material-ui/core/colors';
-import {makeStyles} from '@material-ui/styles';
-import {FuseAnimate, FusePageCarded, FuseChipSelect, FuseUtils} from '@fuse';
-import {useForm} from '@fuse/hooks';
-import {Link} from 'react-router-dom';
-import clsx from 'clsx';
-import _ from '@lodash';
-import {useDispatch, useSelector} from 'react-redux';
-import withReducer from 'app/store/withReducer';
-import * as Actions from '../store/actions';
-import reducer from '../store/reducers';
+import React, { useEffect, useState } from "react";
+import {
+  Button,
+  Tab,
+  Tabs,
+  TextField,
+  InputAdornment,
+  InputLabel,
+  Icon,
+  Typography,
+  Radio,
+  OutlinedInput,
+  MenuItem,
+  RadioGroup,
+  FormControlLabel,
+  FormControl,
+  FormLabel
+} from "@material-ui/core";
+import Select from "react-select";
+import { FuseAnimate, FusePageCarded, FuseChipSelect, FuseUtils } from "@fuse";
+import { useForm } from "@fuse/hooks";
+// import {Link} from 'react-router-dom';
+// import clsx from 'clsx';
+import _ from "@lodash";
+import { useDispatch, useSelector } from "react-redux";
+import withReducer from "app/store/withReducer";
+import * as Actions from "../store/actions";
+import reducer from "../store/reducers";
 
-import BasicInfo from './tabs/basic-info';
-import ProductImage from './tabs/product-image';
+// Tabs
+import BasicInfo from "./tabs/basic-info";
+import ProductImage from "./tabs/product-image";
+import Pricing from "./tabs/pricing";
+import Inventory from "./tabs/inventory";
+import Shipping from "./tabs/shipping";
+import MeasurementOption from "./tabs/measurement/measurement";
 
+// styles
+import { useStyles } from "./styles";
 
-const useStyles = makeStyles(theme => ({
-    productImageFeaturedStar: {
-        position: 'absolute',
-        top     : 0,
-        right   : 0,
-        color   : orange[400],
-        opacity : 0
-    },
-    productImageUpload      : {
-        transitionProperty      : 'box-shadow',
-        transitionDuration      : theme.transitions.duration.short,
-        transitionTimingFunction: theme.transitions.easing.easeInOut,
-    },
-    productImageItem        : {
-        transitionProperty      : 'box-shadow',
-        transitionDuration      : theme.transitions.duration.short,
-        transitionTimingFunction: theme.transitions.easing.easeInOut,
-        '&:hover'               : {
-            '& $productImageFeaturedStar': {
-                opacity: .8
-            }
-        },
-        '&.featured'            : {
-            pointerEvents                      : 'none',
-            boxShadow                          : theme.shadows[3],
-            '& $productImageFeaturedStar'      : {
-                opacity: 1
-            },
-            '&:hover $productImageFeaturedStar': {
-                opacity: 1
-            }
-        }
+// ProductHeader
+import ProductHeader from "./ProductHeader";
+
+// Component Function
+function Product(props) {
+  const dispatch = useDispatch();
+  const product = useSelector(({ eCommerceApp }) => eCommerceApp.product);
+
+  const classes = useStyles(props);
+  const [tabValue, setTabValue] = useState(0);
+  const { form, handleChange, setForm } = useForm(null);
+
+  // state for the measurement
+  const [selectedOption, setSelectedOption] = useState({ option: null });
+
+  function handleSelection(selectedOption) {
+    setSelectedOption(selectedOption);
+    console.log(selectedOption.value);
+  }
+
+  useEffect(() => {
+    function updateProductState() {
+      const params = props.match.params;
+      const { productId } = params;
+
+      if (productId === "new") {
+        dispatch(Actions.newProduct());
+      } else {
+        dispatch(Actions.getProduct(props.match.params));
+      }
     }
-}));
+    updateProductState();
+  }, [dispatch, props.match.params]);
 
-// measurement options
-const measurementOptions = [
-    { 'value': 'top', 'lable': 'Top Measurement' },
-    { 'value': 'bottom', 'label': 'Bottom Measurement' },
-    { 'value': 'fullbody', 'label': 'Full Body Measurement' },
-    { 'value': 'feet', 'label': 'Feet Measurment' }
-];
-
-
-function Product(props)
-{
-    const dispatch = useDispatch();
-    const product = useSelector(({eCommerceApp}) => eCommerceApp.product);
-
-    const classes = useStyles(props);
-    const [tabValue, setTabValue] = useState(0);
-    const { form, handleChange, setForm } = useForm(null);
-    
-    // state for the measurement
-    const inputLabel = React.useRef(null);
-    const [labelWidth, setLabelWidth] = useState(0);
-    React.useEffect(() => {
-        //setLabelWidth(inputLabel.current.offsetWidth);
-    }, []);
-    const [selectedOption, setSelectedOption] = useState('');
-    
-    useEffect(() => {
-        function updateProductState()
-        {
-            const params = props.match.params;
-            const {productId} = params;
-
-            if ( productId === 'new' )
-            {
-                dispatch(Actions.newProduct());
-            }
-            else
-            {
-                dispatch(Actions.getProduct(props.match.params));
-            }
-        }
-
-        updateProductState();
-    }, [dispatch, props.match.params]);
-
-    useEffect(() => {
-        if (
-            (product.data && !form) ||
-            (product.data && form && product.data.id !== form.id)
-        )
-        {
-            setForm(product.data);
-        }
-    }, [form, product.data, setForm]);
-
-    function handleChangeTab(event, tabValue)
-    {
-        setTabValue(tabValue);
+  useEffect(() => {
+    if (
+      (product.data && !form) ||
+      (product.data && form && product.data.id !== form.id)
+    ) {
+      setForm(product.data);
     }
+  }, [form, product.data, setForm]);
 
-    function handleChipChange(value, name)
-    {
-        setForm(_.set({...form}, name, value.map(item => item.value)));
+  function handleChangeTab(event, tabValue) {
+    setTabValue(tabValue);
+  }
+
+  function handleChipChange(value, name) {
+    setForm(_.set({ ...form }, name, value.map(item => item.value)));
+  }
+
+  function setFeaturedImage(id) {
+    setForm(_.set({ ...form }, "featuredImageId", id));
+  }
+
+  function handleUploadChange(e) {
+    const file = e.target.files[0];
+    if (!file) {
+      return;
     }
+    const reader = new FileReader();
+    reader.readAsBinaryString(file);
 
-    function setFeaturedImage(id)
-    {
-        setForm(_.set({...form}, 'featuredImageId', id));
-    }
+    reader.onload = () => {
+      setForm(
+        _.set({ ...form }, `images`, [
+          {
+            id: FuseUtils.generateGUID(),
+            url: `data:${file.type};base64,${btoa(reader.result)}`,
+            type: "image"
+          },
+          ...form.images
+        ])
+      );
+    };
 
-    function handleUploadChange(e)
-    {
-        const file = e.target.files[0];
-        if ( !file )
-        {
-            return;
-        }
-        const reader = new FileReader();
-        reader.readAsBinaryString(file);
+    reader.onerror = function() {
+      console.log("error on load image");
+    };
+  }
 
-        reader.onload = () => {
-            setForm(_.set({...form}, `images`,
-                [
-                    {
-                        'id'  : FuseUtils.generateGUID(),
-                        'url' : `data:${file.type};base64,${btoa(reader.result)}`,
-                        'type': 'image'
-                    },
-                    ...form.images
-                ]
-            ));
-        };
+  function canBeSubmitted() {
+    return form.name.length > 0 && !_.isEqual(product.data, form);
+  }
 
-        reader.onerror = function () {
-            console.log("error on load image");
-        };
-    }
-
-    function canBeSubmitted()
-    {
-        return (
-            form.name.length > 0 &&
-            !_.isEqual(product.data, form)
-        );
-    }
-
-    return (
-        <FusePageCarded
-            classes={{
-                toolbar: "p-0",
-                header : "min-h-72 h-72 sm:h-136 sm:min-h-136"
-            }}
-            header={
-                form && (
-                    <div className="flex flex-1 w-full items-center justify-between">
-
-                        <div className="flex flex-col items-start max-w-full">
-
-                            <FuseAnimate animation="transition.slideRightIn" delay={300}>
-                                <Typography className="normal-case flex items-center sm:mb-12" component={Link} role="button" to="/apps/e-commerce/products" color="inherit">
-                                    <Icon className="mr-4 text-20">arrow_back</Icon>
-                                    Products
-                                </Typography>
-                            </FuseAnimate>
-
-                            <div className="flex items-center max-w-full">
-                                <FuseAnimate animation="transition.expandIn" delay={300}>
-                                    {form.images.length > 0 && form.featuredImageId ? (
-                                        <img className="w-32 sm:w-48 mr-8 sm:mr-16 rounded" src={_.find(form.images, {id: form.featuredImageId}).url} alt={form.name}/>
-                                    ) : (
-                                        <img className="w-32 sm:w-48 mr-8 sm:mr-16 rounded" src="assets/images/ecommerce/product-image-placeholder.png" alt={form.name}/>
-                                    )}
-                                </FuseAnimate>
-                                <div className="flex flex-col min-w-0">
-                                    <FuseAnimate animation="transition.slideLeftIn" delay={300}>
-                                        <Typography className="text-16 sm:text-20 truncate">
-                                            {form.name ? form.name : 'New Product'}
-                                        </Typography>
-                                    </FuseAnimate>
-                                    <FuseAnimate animation="transition.slideLeftIn" delay={300}>
-                                        <Typography variant="caption">Product Detail</Typography>
-                                    </FuseAnimate>
-                                </div>
-                            </div>
-                        </div>
-                        <FuseAnimate animation="transition.slideRightIn" delay={300}>
-                            <Button
-                                className="whitespace-no-wrap"
-                                variant="contained"
-                                disabled={!canBeSubmitted()}
-                                onClick={() => dispatch(Actions.saveProduct(form))}
-                            >
-                                Save
-                            </Button>
-                        </FuseAnimate>
-                        <Button
-                            className="whitespace-no-wrap"
-                            variant="contained"
-                            disabled={!canBeSubmitted()}
-                            onClick={() => {}}
-                        >
-                            Publish
-                            </Button>
-                    </div>
-                )
-            }
-            contentToolbar={
-                <Tabs
-                    value={tabValue}
-                    onChange={handleChangeTab}
-                    indicatorColor="secondary"
-                    textColor="secondary"
-                    variant="scrollable"
-                    scrollButtons="auto"
-                    classes={{root: "w-full h-64"}}
-                >
-                    <Tab className="h-64 normal-case" label="Basic Info"/>
-                    <Tab className="h-64 normal-case" label="Measurement"/>
-                    <Tab className="h-64 normal-case" label="Product Images"/>
-                    <Tab className="h-64 normal-case" label="Pricing"/>
-                    <Tab className="h-64 normal-case" label="Inventory"/>
-                    <Tab className="h-64 normal-case" label="Shipping"/>
-                </Tabs>
-            }
-            content={
-                form && (
-                    <div className="p-16 sm:p-24 max-w-2xl">
-                        {tabValue === 0 &&
-                            (<BasicInfo
-                            form={form}
-                            handleChange={handleChange}
-                            handleChipChange={handleChipChange}
-                            />)
-                        }
-                        
-                        {tabValue === 1 && (
-                            <div>
-                                <Select
-                                    fullWidth
-                                    label="Select Measurement Option"
-                                    name="measurementOption"
-                                    SelectProps={{ native: true }}
-                                    value={selectedOption}
-                                    variant="outlined"
-                                    required
-                                    select
-                                    options={measurementOptions}
-                                    //onChange={handleMeasurement}
-                                />
-
-                                {/*<FuseChipSelect
-                                className="mt-8 mb-24"
-                                value={
-                                    measurementOption.map(item => ({
-                                        value: item,
-                                        label: item
-                                    }))
-                                }
-                                onChange={(value) => handleChipChange(value, 'categories')}
-                                placeholder="Select Measurement Option"
-                                textFieldProps={{
-                                    label          : 'Measurement Option',
-                                    InputLabelProps: {
-                                        shrink: true
-                                    },
-                                    variant        : 'outlined'
-                                }}
-                                isMulti
-                            />
-
-                                <div className="flex">
-                            <TextField
-                                className="mt-8 mb-16 mr-8"
-                                label="Width"
-                                autoFocus
-                                id="width"
-                                name="width"
-                                value={form.width}
-                                onChange={handleChange}
-                                variant="outlined"
-                                fullWidth
-                            />
-
-                            <TextField
-                                className="mt-8 mb-16 mr-8"
-                                label="Height"
-                                id="height"
-                                name="height"
-                                value={form.height}
-                                onChange={handleChange}
-                                variant="outlined"
-                                fullWidth
-                            />
-
-                            <TextField
-                                className="mt-8 mb-16 mr-8"
-                                label="Depth"
-                                id="depth"
-                                name="depth"
-                                value={form.depth}
-                                onChange={handleChange}
-                                variant="outlined"
-                                fullWidth
-                            />
-                        </div>
-                                <div className="flex">
-                          <TextField
-                              className="mt-8 mb-16 mr-8"
-                              label="Width"
-                              autoFocus
-                              id="width"
-                              name="width"
-                              value={form.width}
-                              onChange={handleChange}
-                              variant="outlined"
-                              fullWidth
-                          />
-
-                          <TextField
-                              className="mt-8 mb-16 mr-8"
-                              label="Height"
-                              id="height"
-                              name="height"
-                              value={form.height}
-                              onChange={handleChange}
-                              variant="outlined"
-                              fullWidth
-                          />
-
-                          <TextField
-                              className="mt-8 mb-16 mr-8"
-                              label="Depth"
-                              id="depth"
-                              name="depth"
-                              value={form.depth}
-                              onChange={handleChange}
-                              variant="outlined"
-                              fullWidth
-                          />
-
-                            </div>*/}
-                    </div>
-
-                        )}
-                        {tabValue === 2 && (
-                            <ProductImage
-                                form={form}
-                                classes={classes}
-                                handleUploadChange={handleUploadChange}
-                                setFeaturedImage={setFeaturedImage}
-                            />)
-                        }
-                        {tabValue === 3 && (
-                            <div>
-
-                                <TextField
-                                    className="mt-8 mb-16"
-                                    label="Tax Excluded Price"
-                                    id="priceTaxExcl"
-                                    name="priceTaxExcl"
-                                    value={form.priceTaxExcl}
-                                    onChange={handleChange}
-                                    InputProps={{
-                                        startAdornment: <InputAdornment position="start">$</InputAdornment>
-                                    }}
-                                    type="number"
-                                    variant="outlined"
-                                    autoFocus
-                                    fullWidth
-                                />
-
-                                <TextField
-                                    className="mt-8 mb-16"
-                                    label="Tax Included Price"
-                                    id="priceTaxIncl"
-                                    name="priceTaxIncl"
-                                    value={form.priceTaxIncl}
-                                    onChange={handleChange}
-                                    InputProps={{
-                                        startAdornment: <InputAdornment position="start">$</InputAdornment>
-                                    }}
-                                    type="number"
-                                    variant="outlined"
-                                    fullWidth
-                                />
-
-                                <TextField
-                                    className="mt-8 mb-16"
-                                    label="Tax Rate"
-                                    id="taxRate"
-                                    name="taxRate"
-                                    value={form.taxRate}
-                                    onChange={handleChange}
-                                    InputProps={{
-                                        startAdornment: <InputAdornment position="start">$</InputAdornment>
-                                    }}
-                                    type="number"
-                                    variant="outlined"
-                                    fullWidth
-                                />
-
-                                <TextField
-                                    className="mt-8 mb-16"
-                                    label="Compared Price"
-                                    id="comparedPrice"
-                                    name="comparedPrice"
-                                    value={form.comparedPrice}
-                                    onChange={handleChange}
-                                    InputProps={{
-                                        startAdornment: <InputAdornment position="start">$</InputAdornment>
-                                    }}
-                                    type="number"
-                                    variant="outlined"
-                                    fullWidth
-                                    helperText="Add a compare price to show next to the real price"
-                                />
-
-                            </div>
-                        )}
-                        {tabValue === 4 && (
-                            <div>
-
-                                <TextField
-                                    className="mt-8 mb-16"
-                                    required
-                                    label="SKU"
-                                    autoFocus
-                                    id="sku"
-                                    name="sku"
-                                    value={form.sku}
-                                    onChange={handleChange}
-                                    variant="outlined"
-                                    fullWidth
-                                />
-
-                                <TextField
-                                    className="mt-8 mb-16"
-                                    label="Quantity"
-                                    id="quantity"
-                                    name="quantity"
-                                    value={form.quantity}
-                                    onChange={handleChange}
-                                    variant="outlined"
-                                    type="number"
-                                    fullWidth
-                                />
-                            </div>
-                        )}
-                        {tabValue === 5 && (
-                            <div>
-                                <div className="flex">
-                                    <TextField
-                                        className="mt-8 mb-16 mr-8"
-                                        label="Width"
-                                        autoFocus
-                                        id="width"
-                                        name="width"
-                                        value={form.width}
-                                        onChange={handleChange}
-                                        variant="outlined"
-                                        fullWidth
-                                    />
-
-                                    <TextField
-                                        className="mt-8 mb-16 mr-8"
-                                        label="Height"
-                                        id="height"
-                                        name="height"
-                                        value={form.height}
-                                        onChange={handleChange}
-                                        variant="outlined"
-                                        fullWidth
-                                    />
-
-                                    <TextField
-                                        className="mt-8 mb-16 mr-8"
-                                        label="Depth"
-                                        id="depth"
-                                        name="depth"
-                                        value={form.depth}
-                                        onChange={handleChange}
-                                        variant="outlined"
-                                        fullWidth
-                                    />
-
-                                </div>
-
-                                <TextField
-                                    className="mt-8 mb-16"
-                                    label="Weight"
-                                    id="weight"
-                                    name="weight"
-                                    value={form.weight}
-                                    onChange={handleChange}
-                                    variant="outlined"
-                                    fullWidth
-                                />
-
-                                <TextField
-                                    className="mt-8 mb-16"
-                                    label="Extra Shipping Fee"
-                                    id="extraShippingFee"
-                                    name="extraShippingFee"
-                                    value={form.extraShippingFee}
-                                    onChange={handleChange}
-                                    variant="outlined"
-                                    InputProps={{
-                                        startAdornment: <InputAdornment position="start">$</InputAdornment>
-                                    }}
-                                    fullWidth
-                                />
-                            </div>
-                        )}
-                    </div>
-                )
-            }
-            innerScroll
+  return (
+    <FusePageCarded
+      classes={{
+        toolbar: "p-0",
+        header: "min-h-72 h-72 sm:h-136 sm:min-h-136"
+      }}
+      header={
+        <ProductHeader
+          form={form}
+          canBeSubmitted={canBeSubmitted}
+          dispatch={dispatch}
         />
-    )
+      }
+      contentToolbar={
+        <Tabs
+          value={tabValue}
+          onChange={handleChangeTab}
+          indicatorColor="secondary"
+          textColor="secondary"
+          variant="scrollable"
+          scrollButtons="auto"
+          classes={{ root: "w-full h-64" }}
+        >
+          <Tab className="h-64 normal-case" label="Basic Info" />
+          <Tab className="h-64 normal-case" label="Measurement" />
+          <Tab className="h-64 normal-case" label="Product Images" />
+          <Tab className="h-64 normal-case" label="Pricing" />
+          <Tab className="h-64 normal-case" label="Inventory" />
+          <Tab className="h-64 normal-case" label="Shipping" />
+        </Tabs>
+      }
+      content={
+        form && (
+          <div className="p-16 sm:p-24 max-w-2xl">
+            {tabValue === 0 && (
+              <BasicInfo
+                form={form}
+                handleChange={handleChange}
+                handleChipChange={handleChipChange}
+              />
+            )}
+
+            {tabValue === 1 && (
+              <MeasurementOption
+                form={form}
+                handleChange={handleChange}
+                handleSelection={handleSelection}
+                selectedOption={selectedOption}
+              />
+            )}
+            {tabValue === 2 && (
+              <ProductImage
+                form={form}
+                classes={classes}
+                handleUploadChange={handleUploadChange}
+                setFeaturedImage={setFeaturedImage}
+              />
+            )}
+            {tabValue === 3 && (
+              <Pricing form={form} handleChange={handleChange} />
+            )}
+            {tabValue === 4 && (
+              <Inventory form={form} handleChange={handleChange} />
+            )}
+            {tabValue === 5 && (
+              <Shipping form={form} handleChange={handleChange} />
+            )}
+          </div>
+        )
+      }
+      innerScroll
+    />
+  );
 }
 
-export default withReducer('eCommerceApp', reducer)(Product);
+export default withReducer("eCommerceApp", reducer)(Product);
