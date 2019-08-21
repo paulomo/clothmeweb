@@ -36,9 +36,9 @@ function ToolbarLayout1(props)
                     )}
 
                     <div className="flex flex-1">
-                        <Hidden mdDown>
+                        {/*<Hidden mdDown>
                             <FuseShortcuts className="px-16"/>
-                        </Hidden>
+                        </Hidden>*/}
                     </div>
 
                     <div className="flex">
