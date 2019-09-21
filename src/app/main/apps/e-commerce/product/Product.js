@@ -19,8 +19,6 @@ import {
 import Select from "react-select";
 import { FuseAnimate, FusePageCarded, FuseChipSelect, FuseUtils } from "@fuse";
 import { useForm } from "@fuse/hooks";
-// import {Link} from 'react-router-dom';
-// import clsx from 'clsx';
 import _ from "@lodash";
 import { useDispatch, useSelector } from "react-redux";
 import withReducer from "app/store/withReducer";
@@ -41,6 +39,9 @@ import { useStyles } from "./styles";
 // ProductHeader
 import ProductHeader from "./ProductHeader";
 
+// contentToolbar
+import ContentToolbar from "./ContentToolbar";
+
 // Component Function
 function Product(props) {
   const dispatch = useDispatch();
@@ -55,7 +56,6 @@ function Product(props) {
 
   function handleSelection(selectedOption) {
     setSelectedOption(selectedOption);
-    console.log(selectedOption.value);
   }
 
   useEffect(() => {
@@ -137,26 +137,15 @@ function Product(props) {
         />
       }
       contentToolbar={
-        <Tabs
-          value={tabValue}
-          onChange={handleChangeTab}
-          indicatorColor="secondary"
-          textColor="secondary"
-          variant="scrollable"
-          scrollButtons="auto"
-          classes={{ root: "w-full h-64" }}
-        >
-          <Tab className="h-64 normal-case" label="Basic Info" />
-          <Tab className="h-64 normal-case" label="Measurement" />
-          <Tab className="h-64 normal-case" label="Product Images" />
-          <Tab className="h-64 normal-case" label="Pricing" />
-          <Tab className="h-64 normal-case" label="Inventory" />
-          <Tab className="h-64 normal-case" label="Shipping" />
-        </Tabs>
+        <ContentToolbar
+          tabValue={tabValue}
+          handleChangeTab={handleChangeTab}
+          classes={classes}
+        />
       }
       content={
         form && (
-          <div className="p-16 sm:p-24 max-w-2xl">
+          <div className="p-16 flex-col sm:p-24">
             {tabValue === 0 && (
               <BasicInfo
                 form={form}
@@ -164,7 +153,6 @@ function Product(props) {
                 handleChipChange={handleChipChange}
               />
             )}
-
             {tabValue === 1 && (
               <MeasurementOption
                 form={form}

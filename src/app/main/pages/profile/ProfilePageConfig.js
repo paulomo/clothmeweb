@@ -9,7 +9,7 @@ export const ProfilePageConfig = {
     routes  : [
         {
             path     : '/pages/profile',
-            component: React.lazy(() => import('./ProfilePage'))
+            component: React.lazy(() => import('../Account/index'))
         }
     ]
 };

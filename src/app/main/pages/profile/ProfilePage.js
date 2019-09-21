@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Avatar, Button, Tab, Tabs, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import { FusePageSimple, FuseAnimate } from "@fuse";
-import AboutTab from "./tabs/AboutTab";
+import AboutTab from "./components/AboutTab";
 
 const useStyles = makeStyles(theme => ({
   layoutHeader: {
@@ -22,7 +22,7 @@ function ProfilePage() {
     <FusePageSimple
       classes={{
         header: classes.layoutHeader,
-        toolbar: "px-16 sm:px-24"
+        toolbar: "px-16 flex-col sm:px-24"
       }}
       header={
         <div className="p-24 flex flex-1 flex-col items-center justify-center md:flex-row md:items-end">
@@ -53,7 +53,7 @@ function ProfilePage() {
         </div>
       }
       content={
-        <div className="p-16 sm:p-24">
+        <div className="p-16 flex-col sm:p-24">
           <AboutTab />
         </div>
       }
