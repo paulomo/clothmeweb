@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ClickAwayListener, Paper, Typography } from "@material-ui/core";
 import clsx from "clsx";
-import * as Actions from "app/page/apps/notes/store/actions";
+import * as Actions from "app/page/notes/store/actions";
 import { useDispatch } from "react-redux";
 import NoteForm from "./note-form/NoteForm";
 import { makeStyles } from "@material-ui/styles";

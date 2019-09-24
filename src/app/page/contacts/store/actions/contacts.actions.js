@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getUserData } from "app/page/apps/contacts/store/actions/user.actions";
+import { getUserData } from "app/page/contacts/store/actions/user.actions";
 
 export const GET_CONTACTS = "[CONTACTS APP] GET CONTACTS";
 export const SET_SEARCH_TEXT = "[CONTACTS APP] SET SEARCH TEXT";

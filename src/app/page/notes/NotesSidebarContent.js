@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import { FuseAnimate, NavLinkAdapter } from "Common";
 import { useDispatch, useSelector } from "react-redux";
-import * as Actions from "app/page/apps/notes/store/actions";
+import * as Actions from "app/page/notes/store/actions";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/styles";
 

@@ -11,8 +11,8 @@ import { useDebounce, useForm } from "Common/hooks";
 import { useDispatch, useSelector } from "react-redux";
 import clsx from "clsx";
 import _ from "lodash";
-import * as Actions from "app/page/apps/notes/store/actions";
-import LabelModel from "app/page/apps/notes/model/LabelModel";
+import * as Actions from "app/page/notes/store/actions";
+import LabelModel from "app/page/notes/model/LabelModel";
 
 function LabelsForm(props) {
   const dispatch = useDispatch();
