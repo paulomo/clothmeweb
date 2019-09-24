@@ -232,10 +232,10 @@ const navigationConfig = [
     icon: "apps",
     children: [
       {
-        id: "login",
+        id: "signin",
         title: "Signin",
         type: "item",
-        url: "/login",
+        url: "/signin",
         auth: authRoles.onlyGuest,
         icon: "lock"
       },
