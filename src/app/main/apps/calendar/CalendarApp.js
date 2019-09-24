@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import {Fab, Icon} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
-import {FuseAnimate} from '@fuse';
+import {FuseAnimate} from 'Common';
 import {useDispatch, useSelector} from 'react-redux';
 import BigCalendar from 'react-big-calendar'
 import 'react-big-calendar/lib/css/react-big-calendar.css';

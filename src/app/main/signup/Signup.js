@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, CardContent, Typography } from "@material-ui/core";
-import { FuseAnimate } from "@fuse";
+import { FuseAnimate } from "Common";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import RegisterTab from "./tabs/RegisterTab";

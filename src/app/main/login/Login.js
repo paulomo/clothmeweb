@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Card, CardContent, Typography, Tabs, Tab} from '@material-ui/core';
 import {darken} from '@material-ui/core/styles/colorManipulator';
-import {FuseAnimate} from '@fuse';
+import {FuseAnimate} from 'Common';
 import {Link} from 'react-router-dom';
 import clsx from 'clsx';
 import LoginTab from './tabs/LoginTab';

@@ -1,4 +1,4 @@
-import {Utils} from '@fuse';
+import {Utils} from 'Common';
 
 export const GET_NAVIGATION = '[NAVIGATION] GET NAVIGATION';
 export const SET_NAVIGATION = '[NAVIGATION] SET NAVIGATION';

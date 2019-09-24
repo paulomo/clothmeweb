@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect} from 'react';
 import {TextField, Button, Dialog, DialogActions, DialogContent, Icon, IconButton, Typography, Toolbar, AppBar, FormControlLabel, Switch} from '@material-ui/core';
-import Utils from '@fuse/Utils';
-import {useForm} from '@fuse/hooks';
+import Utils from 'Common/Utils';
+import {useForm} from 'Common/hooks';
 import {useDispatch, useSelector} from 'react-redux';
 import moment from 'moment';
 import * as Actions from './store/actions';

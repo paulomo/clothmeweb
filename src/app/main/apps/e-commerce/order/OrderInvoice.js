@@ -111,7 +111,7 @@ const OrderInvoice = (props) => {
                                         +66 123 455 87
                                     </Typography>
                                     <Typography color="inherit">
-                                        hello@fuseinc.com
+                                        helloCommoninc.com
                                     </Typography>
                                     <Typography color="inherit">
                                         www.fuseinc.com

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Typography} from '@material-ui/core';
-import {FusePageSimple, FuseHighlight} from '@fuse';
+import {FusePageSimple, FuseHighlight} from 'Common';
 import {makeStyles} from '@material-ui/styles';
 
 const useStyles = makeStyles(theme => ({

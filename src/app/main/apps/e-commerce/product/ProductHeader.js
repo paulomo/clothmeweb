@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Icon, Typography } from "@material-ui/core";
-import { FuseAnimate } from "@fuse";
+import { FuseAnimate } from "Common";
 import { Link } from "react-router-dom";
-import _ from "@lodash";
+import _ from "lodash";
 import * as Actions from "../store/actions";
 
 export default function ProductHeader({

@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import _ from '@lodash';
+import _ from 'lodash';
 
 export const orderStatuses = [
     {

@@ -2,8 +2,8 @@ import React from 'react';
 import {Button, Card, CardContent, TextField, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
 import {darken} from '@material-ui/core/styles/colorManipulator';
-import {FuseAnimate} from '@fuse';
-import {useForm} from '@fuse/hooks';
+import {FuseAnimate} from 'Common';
+import {useForm} from 'Common/hooks';
 import clsx from 'clsx';
 import {Link} from 'react-router-dom';
 

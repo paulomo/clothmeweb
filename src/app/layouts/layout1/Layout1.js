@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {renderRoutes} from 'react-router-config'
-import {FuseScrollbars, FuseMessage, FuseDialog, FuseSuspense} from '@fuse';
+import {FuseScrollbars, FuseMessage, FuseDialog, FuseSuspense} from 'Common';
 import {makeStyles} from '@material-ui/styles';
 import {useSelector} from 'react-redux';
 import ToolbarLayout1 from './components/ToolbarLayout1';

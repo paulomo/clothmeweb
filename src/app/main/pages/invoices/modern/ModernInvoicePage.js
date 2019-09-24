@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Card, CardContent, Typography, TableCell, TableRow, TableBody, TableHead, Table} from '@material-ui/core';
 import {darken} from '@material-ui/core/styles/colorManipulator';
-import {FuseAnimate} from '@fuse';
+import {FuseAnimate} from 'Common';
 import clsx from 'clsx';
 import axios from 'axios';
 import {makeStyles} from '@material-ui/styles';

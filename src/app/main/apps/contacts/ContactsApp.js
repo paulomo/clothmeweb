@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import {Fab, Icon} from '@material-ui/core';
-import {FusePageSimple, FuseAnimate} from '@fuse';
+import {FusePageSimple, FuseAnimate} from 'Common';
 import {useDispatch} from 'react-redux';
 import withReducer from 'app/store/withReducer';
 import ContactsList from './ContactsList';

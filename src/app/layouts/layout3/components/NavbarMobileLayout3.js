@@ -1,6 +1,6 @@
 import React from 'react';
 import {AppBar, Hidden, Icon} from '@material-ui/core';
-import {FuseScrollbars} from '@fuse';
+import {FuseScrollbars} from 'Common';
 import clsx from 'clsx';
 import UserNavbarHeader from 'app/layouts/shared-components/UserNavbarHeader';
 import NavbarFoldedToggleButton from 'app/layouts/shared-components/NavbarFoldedToggleButton';

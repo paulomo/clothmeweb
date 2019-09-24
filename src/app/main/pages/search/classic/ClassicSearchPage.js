@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Button, colors, Icon, IconButton, Input, Paper, Typography} from '@material-ui/core';
 import {makeStyles, useTheme, ThemeProvider} from '@material-ui/styles';
-import {FusePageSimple, FuseAnimate, FuseAnimateGroup} from '@fuse';
+import {FusePageSimple, FuseAnimate, FuseAnimateGroup} from 'Common';
 import clsx from 'clsx';
 import axios from 'axios';
 

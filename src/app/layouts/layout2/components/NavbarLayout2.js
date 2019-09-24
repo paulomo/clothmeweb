@@ -1,5 +1,5 @@
 import React from 'react';
-import {FuseScrollbars} from '@fuse';
+import {FuseScrollbars} from 'Common';
 import Logo from 'app/layouts/shared-components/Logo';
 import Navigation from 'app/layouts/shared-components/Navigation';
 

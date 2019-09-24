@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Button, Typography, Dialog, Icon, IconButton, Slide} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
 import {red} from '@material-ui/core/colors';
-import {FuseScrollbars, FuseSettings} from '@fuse';
+import {FuseScrollbars, FuseSettings} from 'Common';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="left" ref={ref} {...props} />;

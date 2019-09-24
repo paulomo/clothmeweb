@@ -1,7 +1,7 @@
 import React from 'react';
 import {Icon, ListItem, IconButton, Input} from '@material-ui/core';
 import NoteListItemModel from 'app/main/apps/notes/model/NoteListItemModel';
-import {useForm} from '@fuse/hooks';
+import {useForm} from 'Common/hooks';
 
 function NoteFormAddListItem(props)
 {

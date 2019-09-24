@@ -1,6 +1,6 @@
 import React from 'react';
 import {Icon, Input, Paper, Typography} from '@material-ui/core';
-import {FuseAnimate} from '@fuse';
+import {FuseAnimate} from 'Common';
 import {Link} from 'react-router-dom';
 
 function Error404Page()

@@ -1,7 +1,7 @@
 import React from 'react';
 import {AppBar, Hidden, Toolbar} from '@material-ui/core';
 import {makeStyles, ThemeProvider} from '@material-ui/styles';
-import {FuseSearch, FuseShortcuts} from '@fuse';
+import {FuseSearch, FuseShortcuts} from 'Common';
 import NavbarMobileToggleButton from 'app/layouts/shared-components/NavbarMobileToggleButton';
 import QuickPanelToggleButton from 'app/layouts/shared-components/quickPanel/QuickPanelToggleButton';
 import ChatPanelToggleButton from 'app/layouts/shared-components/chatPanel/ChatPanelToggleButton';

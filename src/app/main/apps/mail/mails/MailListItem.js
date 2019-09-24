@@ -4,7 +4,7 @@ import {makeStyles} from '@material-ui/styles';
 import {withRouter} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import clsx from 'clsx';
-import _ from '@lodash';
+import _ from 'lodash';
 import * as Actions from '../store/actions/index';
 import MailChip from '../MailChip';
 

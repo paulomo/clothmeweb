@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button, Card, Typography} from '@material-ui/core';
 import {Line} from 'react-chartjs-2';
-import _ from '@lodash';
+import _ from 'lodash';
 import {useTheme} from '@material-ui/styles';
 
 function Widget5(props)

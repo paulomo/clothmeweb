@@ -1,4 +1,4 @@
-import {Utils} from '@fuse';
+import {Utils} from 'Common';
 
 function NoteListItemModel(data)
 {

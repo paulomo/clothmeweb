@@ -1,6 +1,6 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/styles';
-import {FusePageSimple, DemoContent} from '@fuse';
+import {FusePageSimple, DemoContent} from 'Common';
 
 const useStyles = makeStyles({
     layoutRoot: {}

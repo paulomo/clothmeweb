@@ -1,6 +1,6 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/styles';
-import {DemoContent} from '@fuse';
+import {DemoContent} from 'Common';
 
 const useStyles = makeStyles({
     root: {

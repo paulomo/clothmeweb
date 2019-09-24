@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {List, Typography} from '@material-ui/core';
-import {Utils, FuseAnimate, FuseAnimateGroup} from '@fuse';
+import {Utils, FuseAnimate, FuseAnimateGroup} from 'Common';
 import {useSelector} from 'react-redux';
-import _ from '@lodash';
+import _ from 'lodash';
 import TodoListItem from './TodoListItem';
 
 function TodoList(props)

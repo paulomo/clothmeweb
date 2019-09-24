@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Tab, Tabs, TextField, InputAdornment, InputLabel, Icon, Typography, Radio, OutlinedInput, MenuItem, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@material-ui/core';
-import { FuseAnimate, FusePageCarded, FuseChipSelect, Utils } from '@fuse';
+import { FuseAnimate, FusePageCarded, FuseChipSelect, Utils } from 'Common';
 
 
 

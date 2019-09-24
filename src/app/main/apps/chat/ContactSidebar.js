@@ -1,6 +1,6 @@
 import React from 'react';
 import {IconButton, TextField, AppBar, Icon, Toolbar, Typography, Avatar} from '@material-ui/core';
-import {FuseScrollbars} from '@fuse';
+import {FuseScrollbars} from 'Common';
 import {useDispatch, useSelector} from 'react-redux';
 import * as Actions from './store/actions';
 

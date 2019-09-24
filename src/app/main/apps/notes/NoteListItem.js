@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card, Typography, Icon} from '@material-ui/core';
-import {FuseAnimate} from '@fuse';
+import {FuseAnimate} from 'Common';
 import {useDispatch} from 'react-redux';
 import clsx from 'clsx';
 import * as Actions from './store/actions';

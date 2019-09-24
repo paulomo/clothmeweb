@@ -5,7 +5,7 @@ import red from '@material-ui/core/colors/red';
 import amber from '@material-ui/core/colors/amber';
 import {useDispatch, useSelector} from 'react-redux';
 import clsx from 'clsx';
-import _ from '@lodash';
+import _ from 'lodash';
 import * as Actions from './store/actions';
 import TodoChip from './TodoChip';
 

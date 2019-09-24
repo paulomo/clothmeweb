@@ -1,7 +1,7 @@
 import React from 'react';
 import {withStyles, Icon, IconButton, Tooltip, Typography} from '@material-ui/core';
 import {ThemeProvider} from '@material-ui/styles';
-import {FuseAnimate} from '@fuse';
+import {FuseAnimate} from 'Common';
 import Toolbar from 'react-big-calendar/lib/Toolbar';
 import {navigate} from 'react-big-calendar/lib/utils/constants';
 import connect from 'react-redux/es/connect/connect';

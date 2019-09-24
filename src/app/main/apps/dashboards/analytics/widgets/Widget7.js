@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Select, Button, Card, Divider, FormControl, Icon, MenuItem, Typography} from '@material-ui/core';
 import {useTheme} from '@material-ui/styles';
 import {Doughnut} from 'react-chartjs-2';
-import _ from '@lodash';
+import _ from 'lodash';
 
 function Widget7(props)
 {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Icon, Typography} from '@material-ui/core';
-import {FusePageSimple, FuseHighlight} from '@fuse';
+import {FusePageSimple, FuseHighlight} from 'Common';
 import {useDispatch} from 'react-redux';
 import * as authActions from 'app/auth/store/actions';
 import {makeStyles} from '@material-ui/styles';

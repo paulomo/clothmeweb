@@ -1,9 +1,9 @@
 import React, {Fragment, useState} from 'react';
 import {Tooltip, Button, Icon, Input, Typography, IconButton, Fab} from '@material-ui/core';
-import {FuseScrollbars} from '@fuse';
-import {useForm, useUpdateEffect} from '@fuse/hooks';
+import {FuseScrollbars} from 'Common';
+import {useForm, useUpdateEffect} from 'Common/hooks';
 import moment from 'moment';
-import _ from '@lodash';
+import _ from 'lodash';
 import {withRouter} from 'react-router-dom';
 import NoteReminderLabel from 'app/main/apps/notes/NoteReminderLabel';
 import NoteLabel from 'app/main/apps/notes/NoteLabel';

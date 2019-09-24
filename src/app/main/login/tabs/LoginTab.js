@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
 import { Button, InputAdornment, Icon, Checkbox, FormControl, FormControlLabel } from '@material-ui/core';
-import {TextFieldFormsy} from '@fuse';
+import {TextFieldFormsy} from 'Common';
 import Formsy from 'formsy-react';
-import { useForm } from '@fuse/hooks';
+import { useForm } from 'Common/hooks';
 import * as authActions from 'app/auth/store/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';

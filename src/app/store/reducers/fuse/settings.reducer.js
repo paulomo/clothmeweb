@@ -3,7 +3,7 @@ import * as Actions from "app/store/actions/fuse/index";
 import FuseLayoutConfigs from "app/layouts/FuseLayoutConfigs";
 import SettingsConfig from "app/configs/settingsConfig";
 import ThemesConfig from "app/configs/themesConfig";
-import _ from "@lodash";
+import _ from "lodash";
 import {
   defaultSettings,
   getParsedQuerySettings,
@@ -12,7 +12,7 @@ import {
   mustHaveThemeOptions,
   extendThemeWithMixins,
   mainThemeVariations
-} from "@fuse/FuseDefaultSettings";
+} from "Common/DefaultSettings";
 
 const initialSettings = getInitialSettings();
 const initialThemes = getInitialThemes();
