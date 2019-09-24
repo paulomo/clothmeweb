@@ -7,7 +7,7 @@ import {
   TableRow,
   Checkbox
 } from "@material-ui/core";
-import { FuseScrollbars, FuseUtils } from "@fuse";
+import { FuseScrollbars, Utils } from "@fuse";
 import { withRouter } from "react-router-dom";
 import _ from "@lodash";
 import OrdersTableHead from "./OrdersTableHead";
@@ -39,7 +39,7 @@ function OrdersTable(props) {
     setData(
       searchText.length === 0
         ? orders
-        : FuseUtils.filterArrayByString(orders, searchText)
+        : Utils.filterArrayByString(orders, searchText)
     );
   }, [orders, searchText]);
 

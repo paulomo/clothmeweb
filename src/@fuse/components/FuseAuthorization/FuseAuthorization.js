@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 import {matchRoutes} from 'react-router-config';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -41,7 +41,7 @@ class FuseAuthorization extends Component {
         const matched = matchRoutes(state.routes, pathname)[0];
 
         return {
-            accessGranted: matched ? FuseUtils.hasPermission(matched.route.auth, userRole) : true
+            accessGranted: matched ? Utils.hasPermission(matched.route.auth, userRole) : true
         }
     }
 

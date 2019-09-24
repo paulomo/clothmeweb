@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Grow, Paper, Icon, IconButton, ListItem, ListItemText} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 import {useDebounce} from '@fuse/hooks';
 import {withRouter} from 'react-router-dom';
 import clsx from 'clsx';
@@ -54,7 +54,7 @@ function FuseNavHorizontalCollapse(props)
         setOpened(open);
     }, 150);
 
-    if ( !FuseUtils.hasPermission(item.auth, userRole) )
+    if ( !Utils.hasPermission(item.auth, userRole) )
     {
         return null;
     }

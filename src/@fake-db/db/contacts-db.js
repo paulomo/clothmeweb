@@ -1,5 +1,5 @@
 import mock from './../mock';
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 import _ from '@lodash';
 
 const contactsDB = {
@@ -448,7 +448,7 @@ mock.onPost('/api/contacts-app/add-contact').reply((request) => {
     contactsDB.contacts = [
         ...contactsDB.contacts, {
             ...data.newContact,
-            id: FuseUtils.generateGUID()
+            id: Utils.generateGUID()
         }
     ];
     return [200, contactsDB.contacts];

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Icon, ListItem, ListItemText} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 import {withRouter} from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
@@ -48,7 +48,7 @@ function FuseNavVerticalLink(props)
     let paddingValue = 40 + (nestedLevel * 16);
     const listItemPadding = nestedLevel > 0 ? 'pl-' + (paddingValue > 80 ? 80 : paddingValue) : 'pl-24';
 
-    if ( !FuseUtils.hasPermission(item.auth, userRole) )
+    if ( !Utils.hasPermission(item.auth, userRole) )
     {
         return null;
     }

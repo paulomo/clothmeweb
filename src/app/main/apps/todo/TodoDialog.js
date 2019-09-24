@@ -22,7 +22,7 @@ import {
 } from '@material-ui/core';
 import amber from '@material-ui/core/colors/amber';
 import red from '@material-ui/core/colors/red';
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 import {useForm} from '@fuse/hooks';
 import {useDispatch, useSelector} from 'react-redux';
 import moment from 'moment/moment';
@@ -71,7 +71,7 @@ function TodoDialog(props)
                 setForm({
                     ...defaultFormState,
                     ...todoDialog.data,
-                    id: FuseUtils.generateGUID()
+                    id: Utils.generateGUID()
                 });
             }
         },

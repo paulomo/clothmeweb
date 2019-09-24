@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import { FuseUtils } from "@fuse";
+import { Utils } from "@fuse";
 import { appsConfigs } from "app/main/apps/appsConfigs";
 import { pagesConfigs } from "app/main/pages/pagesConfigs";
 import { authRoleExamplesConfigs } from "app/main/auth/authRoleExamplesConfigs";
@@ -24,7 +24,7 @@ const routeConfigs = [
 ];
 
 const routes = [
-  ...FuseUtils.generateRoutesFromConfigs(routeConfigs),
+  ...Utils.generateRoutesFromConfigs(routeConfigs),
   {
     path: "/",
     exact: true,

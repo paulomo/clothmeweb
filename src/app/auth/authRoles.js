@@ -1,14 +1,24 @@
 /**
  * Authorization Roles
+ * will allow headOffice access to some part as well
+ * location(city) office
  */
 const authRoles = {
-    admin           : ['admin'],
-    staff           : ['admin', 'staff'],
-    user            : ['admin', 'staff', 'user'],
-    onlyGuest       : [],
-    headOffice      : [],
-    regionalOffice  : [],
-    countryOffice   : []
+  locationAdmin: ["locationAdmin"],
+  locationStaff: ["locationAdmin", "locationStaff"],
+  user: [
+    "headOfficeAdmin",
+    "headOfficeStaff",
+    "locationAdmin",
+    "locationStaff",
+    "countryOfficeAdmin",
+    "countryOfficeStaff"
+  ],
+  onlyGuest: [],
+  headOfficeAdmin: ["headOfficeAdmin"],
+  headOfficeStaff: ["headOfficeAdmin", "headOfficeStaff"],
+  regionalOfficeAdmin: ["regionalOfficeAdmin"],
+  countryOfficeStaff: ["countryOfficeAdmin", "countryOfficeStaff"]
 };
 
 export default authRoles;

@@ -1,5 +1,5 @@
 import mock from './../mock';
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 
 const calendarDB = {
     events: [
@@ -117,7 +117,7 @@ mock.onPost('/api/calendar-app/add-event').reply((request) => {
     calendarDB.events = [
         ...calendarDB.events, {
             ...data.newEvent,
-            id: FuseUtils.generateGUID()
+            id: Utils.generateGUID()
         }
     ];
     return [200, calendarDB.events];
