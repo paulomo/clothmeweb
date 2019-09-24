@@ -149,7 +149,7 @@ const navigationConfig = [
         id: "wallet",
         title: "Wallet",
         type: "item",
-        auth: authRoles.admin,
+        auth: authRoles.user,
         icon: "account_balance_wallet",
         url: "/pages/maintenance"
       }

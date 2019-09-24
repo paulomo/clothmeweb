@@ -1,6 +1,6 @@
 import axios from "axios";
 import { setselectedContactId } from "./contacts.actions";
-import { closeMobileChatsSidebar } from "app/page/apps/chat/store/actions/sidebars.actions";
+import { closeMobileChatsSidebar } from "app/page/chat/store/actions/sidebars.actions";
 
 export const GET_CHAT = "[CHAT PANEL] GET CHAT";
 export const REMOVE_CHAT = "[CHAT PANEL] REMOVE CHAT";

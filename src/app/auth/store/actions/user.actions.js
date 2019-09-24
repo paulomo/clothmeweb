@@ -15,7 +15,7 @@ export const USER_LOGGED_OUT = "[USER] LOGGED OUT";
  */
 export function setUserDataAuth0(tokenData) {
   const user = {
-    role: ["admin"],
+    role: ["headOfficeAdmin"],
     from: "auth0",
     data: {
       displayName: tokenData.username,
