@@ -1,7 +1,7 @@
 import React from 'react';
 import {Icon, List, ListItem, ListItemText, ListSubheader} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
-import {FuseAnimate, NavLinkAdapter} from '@fuse';
+import {FuseAnimate, NavLinkAdapter} from 'Common';
 import {useSelector} from 'react-redux';
 import MailCompose from './MailCompose';
 

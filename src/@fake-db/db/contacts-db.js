@@ -1,6 +1,6 @@
 import mock from './../mock';
-import {Utils} from '@fuse';
-import _ from '@lodash';
+import {Utils} from 'Common';
+import _ from 'lodash';
 
 const contactsDB = {
     contacts: [

@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {Avatar, Divider, Icon, IconButton, Typography} from '@material-ui/core';
-import {FuseAnimate} from '@fuse';
+import {FuseAnimate} from 'Common';
 import {useDispatch, useSelector} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import _ from '@lodash';
+import _ from 'lodash';
 import * as Actions from '../store/actions/index';
 import MailChip from '../MailChip';
 

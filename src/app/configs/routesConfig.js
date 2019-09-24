@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import { Utils } from "@fuse";
+import { Utils } from "Common";
 import { appsConfigs } from "app/main/apps/appsConfigs";
 import { pagesConfigs } from "app/main/pages/pagesConfigs";
 import { authRoleExamplesConfigs } from "app/main/auth/authRoleExamplesConfigs";

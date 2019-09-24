@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import {Hidden, Icon, IconButton} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
-import {FusePageCarded, DemoContent, DemoSidebarContent} from '@fuse';
+import {FusePageCarded, DemoContent, DemoSidebarContent} from 'Common';
 
 const useStyles = makeStyles({
     layoutRoot: {}

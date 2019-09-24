@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Icon, MenuItem, TextField} from '@material-ui/core';
-import {FuseAnimate} from '@fuse';
+import {FuseAnimate} from 'Common';
 
 const accounts = {
     'creapond'    : 'johndoe@creapond.com',

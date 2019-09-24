@@ -1,10 +1,10 @@
 import React from 'react';
 import {Radio, FormControlLabel, RadioGroup, FormLabel, FormControl, IconButton, TextField, AppBar, Icon, Toolbar, Typography, Avatar} from '@material-ui/core';
-import {FuseScrollbars} from '@fuse';
+import {FuseScrollbars} from 'Common';
 import {useDispatch, useSelector} from 'react-redux';
 import * as Actions from './store/actions';
 import StatusIcon from './StatusIcon';
-import {useForm, useDebounce, useUpdateEffect} from '@fuse/hooks';
+import {useForm, useDebounce, useUpdateEffect} from 'Common/hooks';
 
 const statusArr = [
     {

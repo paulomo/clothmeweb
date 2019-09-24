@@ -17,7 +17,7 @@ import {
     Slide
 } from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
-import {FuseAnimate, FuseAnimateGroup} from '@fuse';
+import {FuseAnimate, FuseAnimateGroup} from 'Common';
 import clsx from 'clsx';
 import axios from 'axios';
 

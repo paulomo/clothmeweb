@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-import {FusePageSimple} from '@fuse';
+import {FusePageSimple} from 'Common';
 import {useDispatch} from 'react-redux';
 import withReducer from 'app/store/withReducer';
 import * as Actions from './store/actions';

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Avatar, Button, Tab, Tabs, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
-import { FusePageSimple, FuseAnimate } from "@fuse";
+import { FusePageSimple, FuseAnimate } from "Common";
 import AboutTab from "./components/AboutTab";
 
 const useStyles = makeStyles(theme => ({

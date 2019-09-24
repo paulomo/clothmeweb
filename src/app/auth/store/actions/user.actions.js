@@ -1,6 +1,6 @@
 import history from "@history";
 import { setDefaultSettings, setInitialSettings } from "app/store/actions/fuse";
-import _ from "@lodash";
+import _ from "lodash";
 import store from "app/store";
 import * as Actions from "app/store/actions";
 import auth0Service from "app/services/auth0Service";
@@ -61,7 +61,7 @@ export function setUserDataFirebase(user, authUser) {
 export function createUserSettingsFirebase(authUser) {
   // return (dispatch, getState) => {
   //     const guestUser = getState().auth.user;
-  //     const fuseDefaultSettings = getState().fuse.settings.defaults;
+  //     const DefaultSettings = getState().fuse.settings.defaults;
   //     const currentUser = firebase.auth().currentUser;
   //
   //     /**
@@ -75,7 +75,7 @@ export function createUserSettingsFirebase(authUser) {
   //             data: {
   //                 displayName: authUser.displayName,
   //                 email      : authUser.email,
-  //                 settings   : {...fuseDefaultSettings}
+  //                 settings   : {...DefaultSettings}
   //             }
   //         }
   //     );

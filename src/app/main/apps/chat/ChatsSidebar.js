@@ -1,4 +1,4 @@
-import {FuseScrollbars, FuseAnimateGroup, Utils} from '@fuse';
+import {FuseScrollbars, FuseAnimateGroup, Utils} from 'Common';
 import {AppBar, Avatar, ListItemIcon, List, ListItemText, Menu, MenuItem, Typography, Toolbar, Icon, IconButton, Input, Paper} from '@material-ui/core';
 import React, {useMemo, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';

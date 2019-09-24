@@ -1,6 +1,6 @@
 import React from 'react';
 import {Hidden, Icon, IconButton, Tooltip, Typography} from '@material-ui/core';
-import {FuseAnimate} from '@fuse';
+import {FuseAnimate} from 'Common';
 import {useDispatch, useSelector} from 'react-redux';
 import * as Actions from './store/actions';
 import NotesSearch from './NotesSearch';

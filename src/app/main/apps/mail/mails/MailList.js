@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {List, Typography} from '@material-ui/core';
-import {Utils, FuseAnimate, FuseAnimateGroup} from '@fuse';
+import {Utils, FuseAnimate, FuseAnimateGroup} from 'Common';
 import {withRouter} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import * as Actions from '../store/actions';

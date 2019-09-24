@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {Icon, Table, TableBody, TableCell, TablePagination, TableRow, Checkbox} from '@material-ui/core';
-import {FuseScrollbars} from '@fuse';
+import {FuseScrollbars} from 'Common';
 import {withRouter} from 'react-router-dom';
 import clsx from 'clsx';
-import _ from '@lodash';
+import _ from 'lodash';
 import ProductsTableHead from './ProductsTableHead';
 import * as Actions from '../store/actions';
 import {useDispatch, useSelector} from 'react-redux';

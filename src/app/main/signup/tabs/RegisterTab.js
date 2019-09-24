@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import Formsy from 'formsy-react';
-import {TextFieldFormsy} from '@fuse';
+import {TextFieldFormsy} from 'Common';
 import {Button, InputAdornment, Icon} from '@material-ui/core';
 import * as authActions from 'app/auth/store/actions';
 import {useDispatch, useSelector} from 'react-redux';

@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-import {FusePageCarded} from '@fuse';
+import {FusePageCarded} from 'Common';
 import {useDispatch} from 'react-redux';
 import withReducer from 'app/store/withReducer';
 import TodoList from './TodoList';

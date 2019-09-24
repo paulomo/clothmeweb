@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import {Button, Avatar, Divider, Tooltip} from '@material-ui/core';
-import {FuseScrollbars, FuseAnimateGroup} from '@fuse';
+import {FuseScrollbars, FuseAnimateGroup} from 'Common';
 import clsx from 'clsx';
 import {useDispatch, useSelector} from 'react-redux';
 import * as Actions from './store/actions';

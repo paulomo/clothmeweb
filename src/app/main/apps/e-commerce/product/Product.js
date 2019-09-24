@@ -17,9 +17,9 @@ import {
   FormLabel
 } from "@material-ui/core";
 import Select from "react-select";
-import { FuseAnimate, FusePageCarded, FuseChipSelect, Utils } from "@fuse";
-import { useForm } from "@fuse/hooks";
-import _ from "@lodash";
+import { FuseAnimate, FusePageCarded, FuseChipSelect, Utils } from "Common";
+import { useForm } from "Common/hooks";
+import _ from "lodash";
 import { useDispatch, useSelector } from "react-redux";
 import withReducer from "app/store/withReducer";
 import * as Actions from "../store/actions";

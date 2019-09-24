@@ -1,6 +1,6 @@
 import "@fake-db";
 import React from "react";
-import { FuseAuthorization, FuseLayout, FuseTheme } from "@fuse";
+import { FuseAuthorization, FuseLayout, FuseTheme } from "Common";
 import Provider from "react-redux/es/components/Provider";
 import { Router } from "react-router-dom";
 import jssExtend from "jss-extend";

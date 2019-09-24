@@ -1,5 +1,5 @@
 import React from 'react';
-import {FuseScrollbars} from '@fuse';
+import {FuseScrollbars} from 'Common';
 import Navigation from 'app/layouts/shared-components/Navigation';
 
 function NavbarLayout3()

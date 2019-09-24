@@ -14,7 +14,7 @@ import {
   Toolbar,
   Typography
 } from "@material-ui/core";
-import { FuseAnimateGroup } from "@fuse";
+import { FuseAnimateGroup } from "Common";
 import axios from "axios";
 
 function AboutTab() {

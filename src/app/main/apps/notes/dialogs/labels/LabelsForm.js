@@ -1,9 +1,9 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {Typography, ListItem, Input, IconButton, Icon, List} from '@material-ui/core';
-import {useDebounce, useForm} from '@fuse/hooks';
+import {useDebounce, useForm} from 'Common/hooks';
 import {useDispatch, useSelector} from 'react-redux';
 import clsx from 'clsx';
-import _ from '@lodash';
+import _ from 'lodash';
 import * as Actions from 'app/main/apps/notes/store/actions';
 import LabelModel from 'app/main/apps/notes/model/LabelModel';
 

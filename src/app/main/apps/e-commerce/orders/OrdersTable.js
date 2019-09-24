@@ -7,9 +7,9 @@ import {
   TableRow,
   Checkbox
 } from "@material-ui/core";
-import { FuseScrollbars, Utils } from "@fuse";
+import { FuseScrollbars, Utils } from "Common";
 import { withRouter } from "react-router-dom";
-import _ from "@lodash";
+import _ from "lodash";
 import OrdersTableHead from "./OrdersTableHead";
 import OrdersStatus from "../order/OrdersStatus";
 import * as Actions from "../store/actions";

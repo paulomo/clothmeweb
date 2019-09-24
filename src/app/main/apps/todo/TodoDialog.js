@@ -22,11 +22,11 @@ import {
 } from '@material-ui/core';
 import amber from '@material-ui/core/colors/amber';
 import red from '@material-ui/core/colors/red';
-import {Utils} from '@fuse';
-import {useForm} from '@fuse/hooks';
+import {Utils} from 'Common';
+import {useForm} from 'Common/hooks';
 import {useDispatch, useSelector} from 'react-redux';
 import moment from 'moment/moment';
-import _ from '@lodash';
+import _ from 'lodash';
 import * as Actions from './store/actions';
 
 const defaultFormState = {

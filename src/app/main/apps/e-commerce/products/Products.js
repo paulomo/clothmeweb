@@ -1,5 +1,5 @@
 import React from 'react';
-import {FusePageCarded} from '@fuse';
+import {FusePageCarded} from 'Common';
 import withReducer from 'app/store/withReducer';
 import ProductsTable from './ProductsTable';
 import ProductsHeader from './ProductsHeader';

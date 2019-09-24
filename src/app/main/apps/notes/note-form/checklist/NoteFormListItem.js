@@ -1,7 +1,7 @@
 import React from 'react';
 import {Icon, IconButton, Checkbox, ListItem, Input} from '@material-ui/core';
 import clsx from 'clsx';
-import _ from '@lodash';
+import _ from 'lodash';
 
 function NoteFormListItem(props)
 {

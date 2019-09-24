@@ -1,6 +1,6 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/styles';
-import {FuseScrollbars, FuseMessage, FuseDialog, FuseSuspense} from '@fuse';
+import {FuseScrollbars, FuseMessage, FuseDialog, FuseSuspense} from 'Common';
 import {renderRoutes} from 'react-router-config'
 import {useSelector} from 'react-redux';
 import clsx from 'clsx';

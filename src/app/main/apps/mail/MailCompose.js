@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {TextField, Button, Dialog, DialogActions, DialogContent, Icon, IconButton, Typography, Toolbar, AppBar} from '@material-ui/core';
-import {useForm} from '@fuse/hooks';
+import {useForm} from 'Common/hooks';
 import MailAttachment from './MailAttachment';
 
 function MailCompose()

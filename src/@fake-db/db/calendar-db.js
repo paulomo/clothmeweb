@@ -1,5 +1,5 @@
 import mock from './../mock';
-import {Utils} from '@fuse';
+import {Utils} from 'Common';
 
 const calendarDB = {
     events: [

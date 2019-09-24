@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Popover, ClickAwayListener, IconButton, Icon, List, ListItem, ListItemText} from '@material-ui/core';
 import {useSelector} from 'react-redux';
-import _ from '@lodash';
+import _ from 'lodash';
 
 function NoteFormLabelMenu(props)
 {

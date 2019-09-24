@@ -1,6 +1,6 @@
 import React from 'react';
 import {Divider, Icon, List, ListItem, ListItemText, Paper, ListSubheader} from '@material-ui/core';
-import {FuseAnimate, NavLinkAdapter} from '@fuse';
+import {FuseAnimate, NavLinkAdapter} from 'Common';
 import {useDispatch, useSelector} from 'react-redux';
 import * as Actions from 'app/main/apps/notes/store/actions';
 import clsx from 'clsx';

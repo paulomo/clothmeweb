@@ -1,6 +1,6 @@
 import React from 'react';
 import {Icon, List, ListItem, ListItemText, ListSubheader, Button} from '@material-ui/core';
-import {FuseAnimate, NavLinkAdapter} from '@fuse';
+import {FuseAnimate, NavLinkAdapter} from 'Common';
 import {useDispatch, useSelector} from 'react-redux';
 import * as Actions from './store/actions';
 import {makeStyles} from '@material-ui/styles';

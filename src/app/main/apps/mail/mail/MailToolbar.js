@@ -1,6 +1,6 @@
 import React from 'react';
 import {Icon, IconButton} from '@material-ui/core';
-import {FuseAnimate} from '@fuse';
+import {FuseAnimate} from 'Common';
 import {useDispatch, useSelector} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import * as Actions from '../store/actions/index';

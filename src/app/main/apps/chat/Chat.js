@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Avatar, Paper, Typography, TextField, IconButton, Icon} from '@material-ui/core';
-import {FuseScrollbars} from '@fuse';
+import {FuseScrollbars} from 'Common';
 import {useDispatch, useSelector} from 'react-redux';
 import clsx from 'clsx';
 import moment from 'moment/moment';
