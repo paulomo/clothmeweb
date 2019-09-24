@@ -1,7 +1,3 @@
-import { MailConfirmPageConfig } from "./auth/mail-confirm/MailConfirmPageConfig";
-import { LockPageConfig } from "./auth/lock/LockPageConfig";
-import { ForgotPasswordConfig } from "./auth/forgot-password/ForgotPasswordConfig";
-import { ResetPasswordConfig } from "./auth/reset-password/ResetPasswordConfig";
 import { Error404PageConfig } from "./errors/404/Error404PageConfig";
 import { Error500PageConfig } from "./errors/500/Error500PageConfig";
 import { MaintenancePageConfig } from "./maintenance/MaintenancePageConfig";
@@ -13,10 +9,6 @@ import { ModernSearchPageConfig } from "./search/modern/ModernSearchPageConfig";
 import { KnowledgeBasePageConfig } from "./knowledge-base/KnowledgeBaseConfig";
 
 export const pagesConfigs = [
-  MailConfirmPageConfig,
-  LockPageConfig,
-  ForgotPasswordConfig,
-  ResetPasswordConfig,
   Error404PageConfig,
   Error500PageConfig,
   MaintenancePageConfig,
