@@ -1,5 +1,5 @@
 import mock from './../mock';
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 
 const notesDB = {
     notes : [
@@ -332,7 +332,7 @@ mock.onPost('/api/notes-app/create-note').reply((request) => {
     const newNote =
         {
             ...data.note,
-            id: FuseUtils.generateGUID()
+            id: Utils.generateGUID()
         };
     notesDB.notes = [
         newNote,

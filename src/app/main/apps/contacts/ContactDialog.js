@@ -1,7 +1,7 @@
 import React, {useEffect, useCallback} from 'react';
 import {TextField, Button, Dialog, DialogActions, DialogContent, Icon, IconButton, Typography, Toolbar, AppBar, Avatar} from '@material-ui/core';
 import {useForm} from '@fuse/hooks';
-import FuseUtils from '@fuse/FuseUtils';
+import Utils from '@fuse/Utils';
 import * as Actions from './store/actions';
 import {useDispatch, useSelector} from 'react-redux';
 
@@ -45,7 +45,7 @@ function ContactDialog(props)
                 setForm({
                     ...defaultFormState,
                     ...contactDialog.data,
-                    id: FuseUtils.generateGUID()
+                    id: Utils.generateGUID()
                 });
             }
         },

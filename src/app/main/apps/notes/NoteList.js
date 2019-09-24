@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Typography} from '@material-ui/core';
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 import {useSelector} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import Masonry from 'react-masonry-css';
@@ -47,7 +47,7 @@ function NoteList(props)
                 return data;
             }
 
-            data = (FuseUtils.filterArrayByString(data, searchText));
+            data = (Utils.filterArrayByString(data, searchText));
 
             return data;
         }

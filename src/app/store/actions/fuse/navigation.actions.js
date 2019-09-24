@@ -1,4 +1,4 @@
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 
 export const GET_NAVIGATION = '[NAVIGATION] GET NAVIGATION';
 export const SET_NAVIGATION = '[NAVIGATION] SET NAVIGATION';
@@ -32,7 +32,7 @@ export function appendNavigationItem(item, parentId)
         const {navigation} = getState().fuse;
         return dispatch({
             type      : SET_NAVIGATION,
-            navigation: FuseUtils.appendNavItem(navigation, item, parentId)
+            navigation: Utils.appendNavItem(navigation, item, parentId)
         });
     }
 }
@@ -43,7 +43,7 @@ export function prependNavigationItem(item, parentId)
         const {navigation} = getState().fuse;
         return dispatch({
             type      : SET_NAVIGATION,
-            navigation: FuseUtils.prependNavItem(navigation, item, parentId)
+            navigation: Utils.prependNavItem(navigation, item, parentId)
         });
     }
 }
@@ -54,7 +54,7 @@ export function updateNavigationItem(id, item)
         const {navigation} = getState().fuse;
         return dispatch({
             type      : SET_NAVIGATION,
-            navigation: FuseUtils.updateNavItem(navigation, id, item)
+            navigation: Utils.updateNavItem(navigation, id, item)
         });
     }
 }
@@ -65,7 +65,7 @@ export function removeNavigationItem(id)
         const {navigation} = getState().fuse;
         return dispatch({
             type      : SET_NAVIGATION,
-            navigation: FuseUtils.removeNavItem(navigation, id)
+            navigation: Utils.removeNavItem(navigation, id)
         });
     }
 }

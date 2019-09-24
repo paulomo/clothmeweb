@@ -1,13 +1,13 @@
 import React, {useCallback, useEffect} from 'react';
 import {TextField, Button, Dialog, DialogActions, DialogContent, Icon, IconButton, Typography, Toolbar, AppBar, FormControlLabel, Switch} from '@material-ui/core';
-import FuseUtils from '@fuse/FuseUtils';
+import Utils from '@fuse/Utils';
 import {useForm} from '@fuse/hooks';
 import {useDispatch, useSelector} from 'react-redux';
 import moment from 'moment';
 import * as Actions from './store/actions';
 
 const defaultFormState = {
-    id    : FuseUtils.generateGUID(),
+    id    : Utils.generateGUID(),
     title : '',
     allDay: true,
     start : new Date(),
@@ -42,7 +42,7 @@ function EventDialog(props)
                 setForm({
                     ...defaultFormState,
                     ...eventDialog.data,
-                    id: FuseUtils.generateGUID()
+                    id: Utils.generateGUID()
                 });
             }
         },

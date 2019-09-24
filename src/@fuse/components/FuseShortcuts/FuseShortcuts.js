@@ -3,7 +3,7 @@ import {Divider, Icon, IconButton, Input, ListItemIcon, ListItemText, Menu, Menu
 import {makeStyles} from '@material-ui/styles';
 import * as UserActions from 'app/auth/store/actions';
 import {useDispatch, useSelector} from 'react-redux';
-import {FuseUtils, FuseAnimateGroup} from '@fuse';
+import {Utils, FuseAnimateGroup} from '@fuse';
 import {Link} from 'react-router-dom';
 import amber from '@material-ui/core/colors/amber';
 import clsx from 'clsx';
@@ -36,12 +36,12 @@ function FuseShortcuts(props)
     const [searchText, setSearchText] = useState('');
     const [searchResults, setSearchResults] = useState(null);
     const [navigation, setNavigation] = useState(null);
-    const shortcutItems = shortcuts ? shortcuts.map(id => FuseUtils.findById(navigationData, id)) : [];
+    const shortcutItems = shortcuts ? shortcuts.map(id => Utils.findById(navigationData, id)) : [];
 
     useEffect(() => {
         function flattenNavigation()
         {
-            setNavigation(FuseUtils.getFlatNavigation(navigationData));
+            setNavigation(Utils.getFlatNavigation(navigationData));
         }
 
         flattenNavigation();

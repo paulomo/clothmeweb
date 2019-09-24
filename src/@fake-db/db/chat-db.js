@@ -1,5 +1,5 @@
 import mock from './../mock';
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 import _ from '@lodash';
 
 const chatDb = {
@@ -371,7 +371,7 @@ mock.onPost('/api/chat/user/data').reply((request) => {
 function createNewChat(contactId, userId)
 {
     const user = chatDb.user.find(_user => _user.id === userId);
-    let chatId = FuseUtils.generateGUID();
+    let chatId = Utils.generateGUID();
     user.chatList = [
         {
             'chatId'         : chatId,

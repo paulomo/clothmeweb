@@ -1,6 +1,6 @@
 import mock from './../mock';
 import _ from '@lodash';
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 import jwt from 'jsonwebtoken';
 
 const jwtConfig = {
@@ -172,7 +172,7 @@ mock.onPost('/api/auth/register').reply((request) => {
     if ( !error.displayName && !error.password && !error.email )
     {
         const newUser = {
-            uuid    : FuseUtils.generateGUID(),
+            uuid    : Utils.generateGUID(),
             from    : 'custom-db',
             password: password,
             role    : "admin",

@@ -17,7 +17,7 @@ import {
   FormLabel
 } from "@material-ui/core";
 import Select from "react-select";
-import { FuseAnimate, FusePageCarded, FuseChipSelect, FuseUtils } from "@fuse";
+import { FuseAnimate, FusePageCarded, FuseChipSelect, Utils } from "@fuse";
 import { useForm } from "@fuse/hooks";
 import _ from "@lodash";
 import { useDispatch, useSelector } from "react-redux";
@@ -105,7 +105,7 @@ function Product(props) {
       setForm(
         _.set({ ...form }, `images`, [
           {
-            id: FuseUtils.generateGUID(),
+            id: Utils.generateGUID(),
             url: `data:${file.type};base64,${btoa(reader.result)}`,
             type: "image"
           },

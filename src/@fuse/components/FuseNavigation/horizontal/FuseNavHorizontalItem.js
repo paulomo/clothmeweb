@@ -1,6 +1,6 @@
 import React from 'react';
 import {Icon, ListItem, ListItemText} from '@material-ui/core';
-import {FuseUtils, NavLinkAdapter} from '@fuse';
+import {Utils, NavLinkAdapter} from '@fuse';
 import {withRouter} from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
@@ -47,7 +47,7 @@ function FuseNavHorizontalItem(props)
     const classes = useStyles(props);
     const {item, dense} = props;
 
-    if ( !FuseUtils.hasPermission(item.auth, userRole) )
+    if ( !Utils.hasPermission(item.auth, userRole) )
     {
         return null;
     }

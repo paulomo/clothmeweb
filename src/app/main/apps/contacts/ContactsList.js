@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Avatar, Checkbox, Icon, IconButton, Typography} from '@material-ui/core';
-import {FuseUtils, FuseAnimate} from '@fuse';
+import {Utils, FuseAnimate} from '@fuse';
 import {useDispatch, useSelector} from 'react-redux';
 import ReactTable from "react-table";
 import * as Actions from './store/actions';
@@ -24,7 +24,7 @@ function ContactsList(props)
             {
                 return arr;
             }
-            return FuseUtils.filterArrayByString(arr, searchText);
+            return Utils.filterArrayByString(arr, searchText);
         }
 
         if ( contacts )

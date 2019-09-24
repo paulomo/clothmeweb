@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {List, Typography} from '@material-ui/core';
-import {FuseUtils, FuseAnimate, FuseAnimateGroup} from '@fuse';
+import {Utils, FuseAnimate, FuseAnimateGroup} from '@fuse';
 import {withRouter} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import * as Actions from '../store/actions';
@@ -26,7 +26,7 @@ function MailList(props)
             {
                 return arr;
             }
-            return FuseUtils.filterArrayByString(arr, searchText);
+            return Utils.filterArrayByString(arr, searchText);
         }
 
         if ( mails )

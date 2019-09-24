@@ -1,4 +1,4 @@
-import {FuseScrollbars, FuseAnimateGroup, FuseUtils} from '@fuse';
+import {FuseScrollbars, FuseAnimateGroup, Utils} from '@fuse';
 import {AppBar, Avatar, ListItemIcon, List, ListItemText, Menu, MenuItem, Typography, Toolbar, Icon, IconButton, Input, Paper} from '@material-ui/core';
 import React, {useMemo, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
@@ -167,7 +167,7 @@ function ChatsSidebar(props)
                             {
                                 return arr;
                             }
-                            return FuseUtils.filterArrayByString(arr, searchText);
+                            return Utils.filterArrayByString(arr, searchText);
                         }
 
                         const chatListContacts = contacts.length > 0 && user && user.chatList ? user.chatList.map((_chat) => (

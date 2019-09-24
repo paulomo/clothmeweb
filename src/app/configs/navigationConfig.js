@@ -6,7 +6,7 @@ const navigationConfig = [
     title: "Dashboards",
     type: "item",
     icon: "dashboard",
-    url: "/apps/dashboards/analytics"
+    url: "/apps/dashboards/project"
   },
   {
     id: "e-commerce",
@@ -40,7 +40,7 @@ const navigationConfig = [
     children: [
       {
         id: "e-commerce-pending",
-        title: "Pending",
+        title: "Orders",
         type: "item",
         url: "/apps/e-commerce/orders",
         exact: true
@@ -58,15 +58,15 @@ const navigationConfig = [
     id: "analytics-dashboard",
     title: "Analytics",
     type: "collapse",
-    icon: "",
-    url: "/apps/dashboards/analytics",
+    icon: "fa-analytics",
+    // url: "/apps/dashboards/analytics",
     children: [
       {
         id: "project-dashboard",
         title: "Project",
         type: "item",
         icon: "",
-        url: "/apps/dashboards/project"
+        url: "/apps/dashboards/analytics"
       }
     ]
   },

@@ -1,14 +1,14 @@
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 
 function LabelModel(data)
 {
     const item = data ? data : {};
     return {
-        id  : item.id || FuseUtils.generateGUID(),
+        id  : item.id || Utils.generateGUID(),
         name: item.name || '',
         get handle()
         {
-            return FuseUtils.handleize(this.name)
+            return Utils.handleize(this.name)
         }
     }
 }

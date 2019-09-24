@@ -2,7 +2,7 @@ import React, {useEffect, useReducer, useRef} from 'react';
 import {Popper, ClickAwayListener, MenuItem, Icon, IconButton, ListItemIcon, ListItemText, Paper, TextField, Tooltip, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
 import {useSelector} from 'react-redux';
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 import clsx from 'clsx';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
@@ -243,14 +243,14 @@ function FuseSearch(props)
     useEffect(() => {
         function itemAuthAllowed(item)
         {
-            return FuseUtils.hasPermission(item.auth, userRole)
+            return Utils.hasPermission(item.auth, userRole)
         }
 
         function setNavigation()
         {
             dispatch({
                 type : "setNavigation",
-                value: FuseUtils.getFlatNavigation(navigation).filter(item => itemAuthAllowed(item))
+                value: Utils.getFlatNavigation(navigation).filter(item => itemAuthAllowed(item))
             });
         }
 

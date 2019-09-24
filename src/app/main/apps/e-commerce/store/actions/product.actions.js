@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FuseUtils } from "@fuse";
+import { Utils } from "@fuse";
 import { showMessage } from "app/store/actions/fuse";
 
 // Type of Actions
@@ -50,7 +50,7 @@ isSave: fales;
 */
 export function newProduct() {
   const data = {
-    id: FuseUtils.generateGUID(),
+    id: Utils.generateGUID(),
     name: "",
     handle: "",
     description: "",

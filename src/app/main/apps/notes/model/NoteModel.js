@@ -1,10 +1,10 @@
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 
 function NoteModel(data)
 {
     const item = data ? data : {};
     return {
-        id         : item.id || FuseUtils.generateGUID(),
+        id         : item.id || Utils.generateGUID(),
         title      : item.title || '',
         description: item.description || '',
         archive    : item.archive || false,

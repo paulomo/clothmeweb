@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Collapse, Icon, IconButton, ListItem, ListItemText} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
-import {FuseUtils} from '@fuse';
+import {Utils} from '@fuse';
 import {withRouter} from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
@@ -84,7 +84,7 @@ function FuseNavVerticalCollapse(props)
         setOpen(!open);
     }
 
-    if ( !FuseUtils.hasPermission(item.auth, userRole) )
+    if ( !Utils.hasPermission(item.auth, userRole) )
     {
         return null;
     }

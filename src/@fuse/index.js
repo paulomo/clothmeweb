@@ -22,7 +22,7 @@ export {default as FuseChipSelect} from './components/FuseChipSelect/FuseChipSel
 export {default as FuseSuspense} from './components/FuseSuspense/FuseSuspense';
 export {default as FuseLoading} from './components/FuseLoading/FuseLoading';
 export {default as FuseSidePanel} from './components/FuseSidePanel/FuseSidePanel';
-export {default as FuseUtils} from './FuseUtils';
+export {default as Utils} from './Utils';
 export * from './FuseDefaultSettings';
 export * from './components/formsy/index';
 export {default as FuseLayouts} from 'app/layouts/FuseLayouts';

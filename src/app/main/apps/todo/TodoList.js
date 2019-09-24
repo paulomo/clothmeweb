@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {List, Typography} from '@material-ui/core';
-import {FuseUtils, FuseAnimate, FuseAnimateGroup} from '@fuse';
+import {Utils, FuseAnimate, FuseAnimateGroup} from '@fuse';
 import {useSelector} from 'react-redux';
 import _ from '@lodash';
 import TodoListItem from './TodoListItem';
@@ -21,7 +21,7 @@ function TodoList(props)
             {
                 return arr;
             }
-            return FuseUtils.filterArrayByString(arr, searchText);
+            return Utils.filterArrayByString(arr, searchText);
         }
 
         if ( todos )
