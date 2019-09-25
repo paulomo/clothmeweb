@@ -2,15 +2,15 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { Utils } from "Common";
 import { authConfigs } from "app/auth/pages/authConfigs";
-import { appsConfigs } from "app/page/appsConfigs";
-import { pagesConfigs } from "app/page/pages/pagesConfigs";
+// import { appsConfigs } from "app/page/appsConfigs";
+import { pagesConfigs } from "app/page/pagesConfigs";
 import { authRoleExamplesConfigs } from "app/page/auth/authRoleExamplesConfigs";
 import { UserInterfaceConfig } from "app/page/user-interface/UserInterfaceConfig";
 import { CallbackConfig } from "app/page/callback/CallbackConfig";
 
 const routeConfigs = [
   ...authConfigs,
-  ...appsConfigs,
+  // ...appsConfigs,
   ...pagesConfigs,
   ...authRoleExamplesConfigs,
   UserInterfaceConfig,

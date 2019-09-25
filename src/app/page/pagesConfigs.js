@@ -7,6 +7,15 @@ import { ProfilePageConfig } from "./profile/ProfilePageConfig";
 import { ClassicSearchPageConfig } from "./search/classic/ClassicSearchPageConfig";
 import { ModernSearchPageConfig } from "./search/modern/ModernSearchPageConfig";
 import { KnowledgeBasePageConfig } from "./knowledge-base/KnowledgeBaseConfig";
+import { AnalyticsDashboardAppConfig } from "./dashboards/analytics/AnalyticsDashboardAppConfig";
+import { ProjectDashboardAppConfig } from "./dashboards/project/ProjectDashboardAppConfig";
+import { MailAppConfig } from "./mail/MailAppConfig";
+import { TodoAppConfig } from "./todo/TodoAppConfig";
+import { ContactsAppConfig } from "./contacts/ContactsAppConfig";
+import { CalendarAppConfig } from "./calendar/CalendarAppConfig";
+import { ChatAppConfig } from "./chat/ChatAppConfig";
+import { ECommerceAppConfig } from "./e-commerce/ECommerceAppConfig";
+import { NotesAppConfig } from "./notes/NotesAppConfig";
 
 export const pagesConfigs = [
   Error404PageConfig,
@@ -17,5 +26,14 @@ export const pagesConfigs = [
   ProfilePageConfig,
   ClassicSearchPageConfig,
   ModernSearchPageConfig,
-  KnowledgeBasePageConfig
+  KnowledgeBasePageConfig,
+  AnalyticsDashboardAppConfig,
+  ProjectDashboardAppConfig,
+  MailAppConfig,
+  TodoAppConfig,
+  ContactsAppConfig,
+  CalendarAppConfig,
+  ChatAppConfig,
+  ECommerceAppConfig,
+  NotesAppConfig
 ];
