@@ -2,6 +2,7 @@ import * as reduxModule from "redux";
 import { applyMiddleware, compose, createStore } from "redux";
 import createReducer from "./reducers";
 import thunk from "redux-thunk";
+import createSagaMiddleware from "redux-saga";
 
 /*
 Fix for Firefox redux dev tools extension
@@ -18,12 +19,19 @@ const composeEnhancers =
       })
     : compose;
 
-const enhancer = composeEnhancers(applyMiddleware(thunk));
+// create redux-saga
+const sagaMiddleware = createSagaMiddleware();
+
+//
+const enhancer = composeEnhancers(applyMiddleware(thunk, sagaMiddleware));
 
 // store
 const store = createStore(createReducer(), enhancer);
 
 store.asyncReducers = {};
+
+// then run the saga
+// sagaMiddleware.run(mySaga);
 
 // injectReducer
 export const injectReducer = (key, reducer) => {
