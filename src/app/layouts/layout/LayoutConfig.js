@@ -1,18 +1,22 @@
 const config = {
-    title   : 'Layout 2 - Horizontal',
+    title   : 'Layout 1 - Vertical',
     defaults: {
         mode          : 'fullwidth',
         scroll        : 'content',
         navbar        : {
-            display: true
+            display : true,
+            folded  : true,
+            position: 'left'
         },
         toolbar       : {
             display : true,
+            style   : 'fixed',
             position: 'below'
         },
         footer        : {
-            display: false,
-            style  : 'fixed'
+            display : false,
+            style   : 'fixed',
+            position: 'below'
         },
         leftSidePanel : {
             display: true
@@ -33,10 +37,20 @@ const config = {
                 {
                     name : 'Full Width',
                     value: 'fullwidth'
+                }
+            ]
+        },
+        scroll : {
+            title  : 'Scrollable Area',
+            type   : 'radio',
+            options: [
+                {
+                    name : 'Body',
+                    value: 'body'
                 },
                 {
-                    name : 'Container',
-                    value: 'container'
+                    name : 'Content',
+                    value: 'content'
                 }
             ]
         },
@@ -44,9 +58,27 @@ const config = {
             type    : 'group',
             title   : 'Navbar',
             children: {
-                display: {
+                display : {
                     title: 'Display',
                     type : 'switch'
+                },
+                folded  : {
+                    title: 'Folded',
+                    type : 'switch'
+                },
+                position: {
+                    title  : 'Position',
+                    type   : 'radio',
+                    options: [
+                        {
+                            name : 'Left',
+                            value: 'left'
+                        },
+                        {
+                            name : 'Right',
+                            value: 'right'
+                        }
+                    ]
                 }
             }
         },
@@ -57,6 +89,20 @@ const config = {
                 display : {
                     title: 'Display',
                     type : 'switch'
+                },
+                style   : {
+                    title  : 'Style',
+                    type   : 'radio',
+                    options: [
+                        {
+                            name : 'Fixed',
+                            value: 'fixed'
+                        },
+                        {
+                            name : 'Static',
+                            value: 'static'
+                        }
+                    ]
                 },
                 position: {
                     title  : 'Position',
@@ -78,11 +124,11 @@ const config = {
             type    : 'group',
             title   : 'Footer',
             children: {
-                display: {
+                display : {
                     title: 'Display',
                     type : 'switch'
                 },
-                style  : {
+                style   : {
                     title  : 'Style',
                     type   : 'radio',
                     options: [
@@ -93,6 +139,20 @@ const config = {
                         {
                             name : 'Static',
                             value: 'static'
+                        }
+                    ]
+                },
+                position: {
+                    title  : 'Position',
+                    type   : 'radio',
+                    options: [
+                        {
+                            name : 'Above',
+                            value: 'above'
+                        },
+                        {
+                            name : 'Below',
+                            value: 'below'
                         }
                     ]
                 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function LeftSideLayout2()
+function LeftSideLayout1()
 {
     return (
         <React.Fragment>
@@ -9,4 +9,4 @@ function LeftSideLayout2()
     );
 }
 
-export default LeftSideLayout2;
+export default LeftSideLayout1;

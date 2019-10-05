@@ -32,7 +32,7 @@ const navigationConfig = [
     ]
   },
   {
-    id: "e-commerce",
+    id: "e-commerce-sale",
     title: "Sale",
     type: "collapse",
     icon: "shopping_cart",
