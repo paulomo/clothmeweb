@@ -8,9 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 
-function LoginTab(props)
+function SigninContainer(props)
 {
-
     const { form, handleChange, resetForm } = useForm({
         email: '',
         password: '',
@@ -62,7 +61,7 @@ function LoginTab(props)
                     className="mb-16"
                     type="text"
                     name="email"
-                    label="Username/Email"
+                    label="Email"
                     validations={{
                         minLength: 4
                     }}
@@ -123,7 +122,7 @@ function LoginTab(props)
                     disabled={!isFormValid}
                     value="legacy"
                 >
-                    Login
+                    Signin
                 </Button>
 
             </Formsy>
@@ -132,4 +131,4 @@ function LoginTab(props)
     );
 }
 
-export default LoginTab;
+export default SigninContainer;

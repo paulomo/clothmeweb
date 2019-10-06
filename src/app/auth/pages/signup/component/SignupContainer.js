@@ -5,7 +5,7 @@ import {Button, InputAdornment, Icon} from '@material-ui/core';
 import * as authActions from 'app/auth/store/actions';
 import {useDispatch, useSelector} from 'react-redux';
 
-function RegisterTab(props)
+function SignupContainer(props)
 {
     const dispatch = useDispatch();
     const register = useSelector(({auth}) => auth.register);
@@ -126,7 +126,7 @@ function RegisterTab(props)
                     disabled={!isFormValid}
                     value="legacy"
                 >
-                    Register
+                    Sign Up
                 </Button>
 
             </Formsy>
@@ -135,4 +135,4 @@ function RegisterTab(props)
     );
 }
 
-export default RegisterTab;
+export default SignupContainer;

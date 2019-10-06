@@ -24,10 +24,7 @@ const routes = [
     component: () => <Redirect to="/apps/dashboards/project" />
   },
   {
-    component: () => <Redirect to="/signin" />
-  },
-  {
-    // component: () => <Redirect to="/pages/errors/error-404" />
+    component: () => <Redirect to="/pages/errors/error-404" />
   }
 ];
 

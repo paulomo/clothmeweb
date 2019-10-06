@@ -51,12 +51,14 @@ const navigationConfig = [
     id: "analytics-dashboard",
     title: "Analytics",
     type: "collapse",
+    // auth: authRoles.user,
     icon: "dashboard",
     children: [
       {
         id: "project-dashboard",
         title: "Project",
         type: "item",
+        // auth: authRoles.user,
         url: "/apps/dashboards/analytics"
       }
     ]
@@ -65,31 +67,35 @@ const navigationConfig = [
     id: "company",
     title: "Company",
     type: "group",
-    icon: "",
+    // auth: authRoles.user,
     children: [
       {
         id: "profile",
         title: "User Profile",
         type: "collapse",
         icon: "person",
+        // auth: authRoles.user,
         url: "/pages",
         children: [
           {
             id: "profile",
             title: "Profile",
             type: "item",
+            // auth: authRoles.user,
             url: "/pages/profile"
           },
           {
             id: "message",
             title: "Message",
             type: "item",
-            url: "/apps/mail",
+            // auth: authRoles.user,
+            url: "/apps/message",
           },
           {
             id: "contacts",
             title: "Contacts",
             type: "item",
+            // auth: authRoles.user,
             url: "/apps/contacts/all"
           },
           {
