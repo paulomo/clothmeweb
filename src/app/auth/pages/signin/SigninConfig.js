@@ -23,7 +23,7 @@ export const SigninConfig = {
       }
     }
   },
-  auth: authRoles.onlyGuest,
+  // auth: authRoles.onlyGuest,
   routes: [
     {
       path: "/signin",

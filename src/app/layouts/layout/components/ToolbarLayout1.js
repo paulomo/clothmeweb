@@ -4,6 +4,7 @@ import { makeStyles, ThemeProvider } from "@material-ui/styles";
 import { FuseSearch } from "Common";
 import NavbarMobileToggleButton from "app/layouts/shared-components/NavbarMobileToggleButton";
 // import QuickPanelToggleButton from "app/layouts/shared-components/quickPanel/QuickPanelToggleButton";
+import ChatPanelToggleButton from "app/layouts/shared-components/chatPanel/ChatPanelToggleButton";
 import UserMenu from "app/layouts/shared-components/UserMenu";
 import { useSelector } from "react-redux";
 
@@ -48,7 +49,7 @@ function ToolbarLayout1(props) {
             <Hidden lgUp>
               <div className={classes.separator} />
 
-              {/* <ChatPanelToggleButton /> */}
+              <ChatPanelToggleButton />
             </Hidden>
 
             <div className={classes.separator} />

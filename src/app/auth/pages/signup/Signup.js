@@ -3,8 +3,7 @@ import { Card, CardContent, Typography } from "@material-ui/core";
 import { FuseAnimate } from "Common";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
-import RegisterTab from "./tabs/RegisterTab";
-import { makeStyles } from "@material-ui/styles";
+import SignupContainer from "./component/SignupContainer";
 import { useStyles } from "./styles";
 
 function Signup() {
@@ -26,7 +25,7 @@ function Signup() {
               SIGNUP
             </Typography>
 
-            <RegisterTab />
+            <SignupContainer />
 
             <div className="flex flex-col items-center justify-center pt-32 pb-24">
               <span className="font-medium">
@@ -34,7 +33,7 @@ function Signup() {
                 <Link
                   className="font-medium"
                   style={{ paddingLeft: 10 }}
-                  to="/login"
+                  to="/signin"
                 >
                   Signin
                 </Link>
