@@ -59,7 +59,6 @@ const navigationConfig = [
     title: "Analytics",
     type: "collapse",
     icon: "fa-analytics",
-    // url: "/apps/dashboards/analytics",
     children: [
       {
         id: "project-dashboard",
@@ -90,41 +89,6 @@ const navigationConfig = [
             url: "/pages/profile"
           },
           {
-            id: "chat",
-            title: "Chat",
-            type: "item",
-            url: "/apps/chat",
-            badge: {
-              title: 13,
-              bg: "rgb(9, 210, 97)",
-              fg: "#FFFFFF"
-            }
-          },
-          {
-            id: "todo",
-            title: "To-Do",
-            type: "item",
-            url: "/apps/todo",
-            badge: {
-              title: 3,
-              bg: "rgb(255, 111, 0)",
-              fg: "#FFFFFF"
-            }
-          },
-          {
-            id: "notes",
-            title: "Notes",
-            type: "item",
-            url: "/apps/notes"
-          },
-          {
-            id: "calendar",
-            title: "Calendar",
-            type: "item",
-            url: "/apps/calendar"
-          },
-
-          {
             id: "mail",
             title: "Mail",
             type: "item",
@@ -134,25 +98,24 @@ const navigationConfig = [
               bg: "#F44336",
               fg: "#FFFFFF"
             }
+          },
+          {
+            id: "contacts",
+            title: "Contacts",
+            type: "item",
+            icon: "people_outline",
+            url: "/apps/contacts/all"
+          },
+          {
+            id: "wallet",
+            title: "Wallet",
+            type: "item",
+            auth: authRoles.user,
+            icon: "account_balance_wallet",
+            url: "/pages/maintenance"
           }
         ]
       },
-
-      {
-        id: "contacts",
-        title: "Contacts",
-        type: "item",
-        icon: "people_outline",
-        url: "/apps/contacts/all"
-      },
-      {
-        id: "wallet",
-        title: "Wallet",
-        type: "item",
-        auth: authRoles.user,
-        icon: "account_balance_wallet",
-        url: "/pages/maintenance"
-      }
     ]
   },
   {
@@ -173,25 +136,6 @@ const navigationConfig = [
         type: "item",
         url: "/pages/auth/reset-password"
       },
-      // {
-      //   id: "authentication-lock-screen",
-      //   title: "Lock Screen",
-      //   type: "item",
-      //   url: "/pages/auth/lock"
-      // },
-      // {
-      //   id: "authentication-mail-confirmation",
-      //   title: "Mail Confirmation",
-      //   type: "item",
-      //   url: "/pages/auth/mail-confirm"
-      // },
-      // {
-      //   id: "coming-soon",
-      //   title: "Coming Soon",
-      //   type: "item",
-      //   icon: "alarm",
-      //   url: "/pages/coming-soon"
-      // },
       {
         id: "errors",
         title: "Errors",
@@ -212,13 +156,6 @@ const navigationConfig = [
           }
         ]
       }
-      // {
-      //   id: "maintenance",
-      //   title: "Maintenance",
-      //   type: "item",
-      //   icon: "build",
-      //   url: "/pages/maintenance"
-      // }
     ]
   },
   {
@@ -255,51 +192,6 @@ const navigationConfig = [
         url: "/logout",
         icon: "exit_to_app"
       }
-      // {
-      //   id: "auth-admin-example",
-      //   title: "Admin: Auth protected page",
-      //   type: "item",
-      //   url: "/auth/admin-role-example",
-      //   icon: "security"
-      // },
-      // {
-      //   id: "only-admin-navigation-item",
-      //   title: "Nav item only for Admin",
-      //   type: "item",
-      //   auth: authRoles.admin,
-      //   url: "/auth/admin-role-example",
-      //   icon: "verified_user"
-      // },
-      // {
-      //   id: "auth-staff-example",
-      //   title: "Staff: Auth protected page",
-      //   type: "item",
-      //   url: "/auth/staff-role-example",
-      //   icon: "security"
-      // },
-      // {
-      //   id: "only-staff-navigation-item",
-      //   title: "Nav item only for Staff",
-      //   type: "item",
-      //   auth: authRoles.staff,
-      //   url: "/auth/staff-role-example",
-      //   icon: "verified_user"
-      // },
-      // {
-      //   id: "auth-guest-example",
-      //   title: "Guest: Auth protected page",
-      //   type: "item",
-      //   url: "/auth/guest-role-example",
-      //   icon: "security"
-      // },
-      // {
-      //   id: "only-guest-navigation-item",
-      //   title: "Nav item only for Guest",
-      //   type: "item",
-      //   auth: authRoles.onlyGuest,
-      //   url: "/auth/guest-role-example",
-      //   icon: "verified_user"
-      // }
     ]
   }
 ];
