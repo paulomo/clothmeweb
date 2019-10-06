@@ -45,26 +45,18 @@ const navigationConfig = [
         url: "/apps/e-commerce/orders",
         exact: true
       }
-      //   {
-      //       'id'   : 'e-commerce-orders',
-      //       'title': 'Orders',
-      //       'type' : 'item',
-      //       'url'  : '/apps/e-commerce/orders',
-      //       'exact': true
-      //   }
     ]
   },
   {
     id: "analytics-dashboard",
     title: "Analytics",
     type: "collapse",
-    icon: "fa-analytics",
+    icon: "dashboard",
     children: [
       {
         id: "project-dashboard",
         title: "Project",
         type: "item",
-        icon: "",
         url: "/apps/dashboards/analytics"
       }
     ]
@@ -89,21 +81,15 @@ const navigationConfig = [
             url: "/pages/profile"
           },
           {
-            id: "mail",
-            title: "Mail",
+            id: "message",
+            title: "Message",
             type: "item",
             url: "/apps/mail",
-            badge: {
-              title: 25,
-              bg: "#F44336",
-              fg: "#FFFFFF"
-            }
           },
           {
             id: "contacts",
             title: "Contacts",
             type: "item",
-            icon: "people_outline",
             url: "/apps/contacts/all"
           },
           {
