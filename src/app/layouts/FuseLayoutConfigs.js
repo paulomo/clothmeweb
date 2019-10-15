@@ -1,7 +1,7 @@
-import layout1 from './layout1/Layout1Config';
+import layout from './layout/LayoutConfig';
 
 const FuseLayoutConfigs = {
-    layout1,
+    layout,
 };
 
 export default FuseLayoutConfigs;

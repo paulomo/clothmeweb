@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Avatar, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Icon, Tab, Tabs, Tooltip, Typography} from '@material-ui/core';
-import {FuseAnimate, FusePageCarded} from 'Common';
+import {FuseAnimate, FusePageCarded} from 'app/Common';
 import {Link} from 'react-router-dom';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import GoogleMap from 'google-map-react';

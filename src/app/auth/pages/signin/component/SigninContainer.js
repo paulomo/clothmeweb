@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
 import { Button, InputAdornment, Icon, Checkbox, FormControl, FormControlLabel } from '@material-ui/core';
-import {TextFieldFormsy} from 'Common';
+import {TextFieldFormsy} from 'app/Common';
 import Formsy from 'formsy-react';
-import { useForm } from 'Common/hooks';
+import { useForm } from 'app/Common/hooks';
 import * as authActions from 'app/auth/store/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -16,22 +16,21 @@ function SigninContainer(props)
         remember: true
     });
 
-
     const dispatch = useDispatch();
-    const login = useSelector(({auth}) => auth.login);
+    const signin = useSelector(({auth}) => auth.signin);
 
     const [isFormValid, setIsFormValid] = useState(false);
     const formRef = useRef(null);
 
     useEffect(() => {
-        if ( login.error && (login.error.email || login.error.password) )
+        if ( signin.error && (signin.error.email || signin.error.password) )
         {
             formRef.current.updateInputsWithError({
-                ...login.error
+                ...signin.error
             });
             disableButton();
         }
-    }, [login.error]);
+    }, [signin.error]);
 
     function disableButton()
     {
@@ -45,7 +44,7 @@ function SigninContainer(props)
 
     function handleSubmit(model)
     {
-        dispatch(authActions.submitLogin(model));
+        dispatch(authActions.submitSignin(model));
     }
 
     return (
@@ -124,9 +123,7 @@ function SigninContainer(props)
                 >
                     Signin
                 </Button>
-
             </Formsy>
-
         </div>
     );
 }

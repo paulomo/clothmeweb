@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {Typography} from '@material-ui/core';
-import {FuseAnimate} from 'Common';
+import {FuseAnimate} from 'app/Common';
 import {useDispatch, useSelector} from 'react-redux';
 import Widget1 from './widgets/Widget1';
 import Widget2 from './widgets/Widget2';

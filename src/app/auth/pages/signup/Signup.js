@@ -1,49 +1,73 @@
-import React, { useState } from "react";
-import { Card, CardContent, Typography } from "@material-ui/core";
-import { FuseAnimate } from "Common";
-import { Link } from "react-router-dom";
-import clsx from "clsx";
+import React from "react";
 import SignupContainer from "./component/SignupContainer";
-import { useStyles } from "./styles";
+import ConfirmSignup from "../confirmSignup/ConfirmSignup";
+import * as authActions from "app/auth/store/actions";
+import { FuseAnimate } from "app/Common";
 
-function Signup() {
-  const classes = useStyles();
+class Signup extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      field: { 
+        email: "",
+        password: "",
+        phone_number: "", // E.164 number convention
+        given_name: "",
+        family_name: "",
+        gender: "",
+        birthdate: "",
+        company_name: "",
+        role: "headOfficeAdmin",
+        location: "headOffice",
+        plan: "",
+        confirmationCode: ""
+      },
+      newUser: null,
+      isLoading: false,
+      isFormValid: false,
+    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+  };
 
-  return (
-    <div className={clsx(classes.root, "flex-1")}>
-      <FuseAnimate animation="transition.expandIn">
-        <img className="" src="" alt="jfeufeuhfeuhfu" />
-      </FuseAnimate>
+  disableButton = () => {
+    this.setState({isFormValid: this.state.isFormValid = false})
+  }
 
-      <FuseAnimate animation={{ translateX: [0, "100%"] }}>
-        <Card className="max-w-400 mx-auto md:m-600" square>
-          <CardContent
-            className="flex flex-col items-center justify-center p-32 md:p-48"
-            style={{ marginTop: 40 }}
-          >
-            <Typography variant="h6" className="text-center md:w-full mb-48">
-              SIGNUP
-            </Typography>
+  enableButton = () => {
+    this.setState({isFormValid: this.state.isFormValid = true})
+  }
 
-            <SignupContainer />
+  handleSubmit(event){
+    // event.preventDefault();
+    console.log(event);
+  }
 
-            <div className="flex flex-col items-center justify-center pt-32 pb-24">
-              <span className="font-medium">
-                Already have an account?
-                <Link
-                  className="font-medium"
-                  style={{ paddingLeft: 10 }}
-                  to="/signin"
-                >
-                  Signin
-                </Link>
-              </span>
-            </div>
-          </CardContent>
-        </Card>
-      </FuseAnimate>
-    </div>
-  );
+  handleConfirmationSubmit = (event) => {
+    event.preventDefault();
+  }
+
+  render() {
+    const { field, newUser, isFormValid } = this.state;
+    return (
+      <div className={"flex-1"}>
+        <FuseAnimate animation="transition.expandIn">
+          <img className="" src="" alt="jfeufeuhfeuhfu" />
+        </FuseAnimate>
+        {newUser === null ? (
+          <SignupContainer
+            field={field}
+            isFormValid={isFormValid}
+            disableButton={this.disableButton}
+            enableButton={this.enableButton}
+            handleSubmit={this.handleSubmit}
+          />
+        ) : (
+          <ConfirmSignup />
+        )}
+      </div>
+    );
+  }
+  
 }
 
 export default Signup;

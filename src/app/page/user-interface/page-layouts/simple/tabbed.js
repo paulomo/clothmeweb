@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {FusePageSimple, DemoContent} from 'Common';
+import {FusePageSimple, DemoContent} from 'app/Common';
 
 import {Tab, Tabs} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';

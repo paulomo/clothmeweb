@@ -1,7 +1,7 @@
-import layout1 from 'app/layouts/layout1/Layout1';
+import layout from 'app/layouts/layout/Layout';
 
 const FuseLayouts = {
-    layout1,
+    layout,
 };
 
 export default FuseLayouts;

@@ -8,7 +8,6 @@ import { ClassicSearchPageConfig } from "./search/classic/ClassicSearchPageConfi
 import { ModernSearchPageConfig } from "./search/modern/ModernSearchPageConfig";
 import { AnalyticsDashboardAppConfig } from "./dashboards/analytics/AnalyticsDashboardAppConfig";
 import { ProjectDashboardAppConfig } from "./dashboards/project/ProjectDashboardAppConfig";
-import { ContactsAppConfig } from "./contacts/ContactsAppConfig";
 import { ECommerceAppConfig } from "./e-commerce/ECommerceAppConfig";
 
 export const pagesConfigs = [
@@ -22,6 +21,5 @@ export const pagesConfigs = [
   ModernSearchPageConfig,
   AnalyticsDashboardAppConfig,
   ProjectDashboardAppConfig,
-  ContactsAppConfig,
   ECommerceAppConfig,
 ];

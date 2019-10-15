@@ -12,7 +12,7 @@ import {
   mustHaveThemeOptions,
   extendThemeWithMixins,
   mainThemeVariations
-} from "Common/DefaultSettings";
+} from "app/Common/DefaultSettings";
 
 const initialSettings = getInitialSettings();
 const initialThemes = getInitialThemes();

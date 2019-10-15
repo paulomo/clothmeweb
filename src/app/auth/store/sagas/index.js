@@ -1,12 +1,23 @@
-import { all } from "redux-saga/effects";
+import { fork } from 'redux-saga/effects';
+import watchUserAuthentication from './watchers';
 
-// single entry point to start all Sagas at once
-export default function* authSaga() {
-  yield all([
-    // helloSaga(),
-    // watchIncrementAsync()
-  ]);
+export default function* startForman() {
+  yield fork(watchUserAuthentication);
 }
+
+
+
+// import { all } from "redux-saga/effects";
+
+// // single entry point to start all Sagas at once
+// export default function* authSaga() {
+//   yield all([
+//     // helloSaga(),
+//     // watchIncrementAsync()
+//   ]);
+// }
+
+
 
 // Note: Saga have watchers watching for actions dispatched by the user or someothe events
 /**

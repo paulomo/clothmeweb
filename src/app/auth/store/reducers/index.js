@@ -1,12 +1,12 @@
 import {combineReducers} from 'redux';
 import user from './user.reducer';
-import login from './login.reducer';
-import register from './register.reducer';
+import signin from './signin.reducer';
+import signup from './signup.reducer';
 
 const authReducers = combineReducers({
     user,
-    login,
-    register
+    signin,
+    signup
 });
 
 export default authReducers;

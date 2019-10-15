@@ -1,7 +1,7 @@
 import React from 'react';
 import {Paper, Input, Icon, Typography} from '@material-ui/core';
 import {ThemeProvider} from '@material-ui/styles';
-import {FuseAnimate} from 'Common';
+import {FuseAnimate} from 'app/Common';
 import * as Actions from '../store/actions';
 import {useDispatch, useSelector} from 'react-redux';
 

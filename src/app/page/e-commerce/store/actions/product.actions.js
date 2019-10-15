@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Utils } from "Common";
+import { Utils } from "app/Common";
 import { showMessage } from "app/store/actions/fuse";
 
 // Type of Actions

@@ -1,4 +1,6 @@
 import React from 'react';
+import { authRoles } from "app/auth";
+
 
 export const ProfilePageConfig = {
     settings: {
@@ -6,6 +8,7 @@ export const ProfilePageConfig = {
             config: {}
         }
     },
+    // auth: authRoles.user,
     routes  : [
         {
             path     : '/pages/profile',

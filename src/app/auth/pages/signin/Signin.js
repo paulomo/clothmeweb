@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, CardContent, Typography, Tabs, Tab } from "@material-ui/core";
-import { FuseAnimate } from "Common";
+import { FuseAnimate } from "app/Common";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import SigninContainer from "./component/SigninContainer";

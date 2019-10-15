@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button, Typography} from '@material-ui/core';
 import {makeStyles, useTheme, ThemeProvider} from '@material-ui/styles';
-import {FuseAnimate} from 'Common';
+import {FuseAnimate} from 'app/Common';
 import {useSelector} from 'react-redux';
 import {Line} from 'react-chartjs-2';
 import _ from 'lodash';

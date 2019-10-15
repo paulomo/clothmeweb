@@ -1,5 +1,5 @@
 import React from 'react';
-import {FusePageCarded, DemoContent} from 'Common';
+import {FusePageCarded, DemoContent} from 'app/Common';
 import {makeStyles} from '@material-ui/styles';
 
 const useStyles = makeStyles({

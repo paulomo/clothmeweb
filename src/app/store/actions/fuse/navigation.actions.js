@@ -1,4 +1,4 @@
-import {Utils} from 'Common';
+import {Utils} from 'app/Common';
 
 export const GET_NAVIGATION = '[NAVIGATION] GET NAVIGATION';
 export const SET_NAVIGATION = '[NAVIGATION] SET NAVIGATION';

@@ -1,3 +1,3 @@
-export * from './login.actions';
-export * from './register.actions';
+export * from './signin.actions';
+export * from './signup.actions';
 export * from './user.actions';

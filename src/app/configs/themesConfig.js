@@ -1,4 +1,4 @@
-import { dark } from "Common/colors";
+import { dark } from "app/Common/colors";
 import lightBlue from "@material-ui/core/colors/grey";
 import red from "@material-ui/core/colors/red";
 

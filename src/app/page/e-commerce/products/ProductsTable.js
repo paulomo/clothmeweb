@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Icon, Table, TableBody, TableCell, TablePagination, TableRow, Checkbox} from '@material-ui/core';
-import {FuseScrollbars} from 'Common';
+import {FuseScrollbars} from 'app/Common';
 import {withRouter} from 'react-router-dom';
 import clsx from 'clsx';
 import _ from 'lodash';

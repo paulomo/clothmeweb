@@ -1,5 +1,5 @@
 import React from 'react';
-import {FuseNavigation} from 'Common';
+import {FuseNavigation} from 'app/Common';
 import clsx from 'clsx';
 import {useSelector} from 'react-redux';
 

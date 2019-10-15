@@ -1,6 +1,6 @@
 import React from 'react';
 import {Icon, Typography} from '@material-ui/core';
-import {FusePageSimple, FuseAnimateGroup} from 'Common';
+import {FusePageSimple, FuseAnimateGroup} from 'app/Common';
 
 function HelperClassesUI()
 {

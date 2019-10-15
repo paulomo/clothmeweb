@@ -7,7 +7,7 @@ export const AnalyticsDashboardAppConfig = {
       config: {}
     }
   },
-  // auth: authRoles.admin, //['admin']s
+  // auth: authRoles.user, //['admin']s
   routes: [
     {
       path: "/apps/dashboards/analytics",
