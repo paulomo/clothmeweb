@@ -36,22 +36,6 @@ function Signin() {
               SIGNIN
             </Typography>
 
-            <div
-              value={selectedTab}
-              onChange={handleTabChange}
-              variant="fullWidth"
-              className="mb-32"
-              icon={
-                <img
-                  className="h-40 p-4 bg-black rounded-12"
-                  src="assets/images/logos/jwt.svg"
-                  alt="firebase"
-                />
-              }
-              className="min-w-0"
-              label="JWT"
-            ></div>
-
             <SigninContainer />
 
             <div className="flex flex-col items-center justify-center pt-32">

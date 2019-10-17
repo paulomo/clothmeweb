@@ -11,14 +11,14 @@ const initialState = {
 const signup = function (state = initialState, action) {
     switch ( action.type )
     {
-        case Actions.REGISTER_SUCCESS:
+        case Actions.SIGNUP_SUCCESS:
         {
             return {
                 ...initialState,
                 success: true
             };
         }
-        case Actions.REGISTER_ERROR:
+        case Actions.SIGNUP_ERROR:
         {
             return {
                 success: false,

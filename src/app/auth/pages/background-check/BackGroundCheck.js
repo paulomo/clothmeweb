@@ -8,7 +8,7 @@ import { Card, CardContent, Typography } from "@material-ui/core";
 import { FuseAnimate } from "app/Common";
 import { Link } from "react-router-dom";
 
-function ConfirmSignup(props) {
+function BackGroundCheck(props) {
   return (
     <div className="w-full">
       <Formsy
@@ -60,4 +60,4 @@ function ConfirmSignup(props) {
   );
 }
 
-export default ConfirmSignup;
+export default BackGroundCheck;

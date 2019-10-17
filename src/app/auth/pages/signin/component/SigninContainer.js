@@ -45,6 +45,7 @@ function SigninContainer(props)
     function handleSubmit(model)
     {
         dispatch(authActions.submitSignin(model));
+        console.log(model);
     }
 
     return (

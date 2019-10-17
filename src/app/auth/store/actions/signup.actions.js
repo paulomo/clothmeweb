@@ -1,14 +1,12 @@
-import * as UserActions from "./user.actions";
-import * as Actions from "app/store/actions";
-
-export const SIGNUP = 'SIGNUP';
-export const REGISTER_ERROR = "REGISTER_ERROR";
-export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
+export const API_SIGNUP = 'API_SIGNUP';
+export const SIGNUP_ERROR = "REGISTER_ERROR";
+export const SIGNUP_SUCCESS = "REGISTER_SUCCESS";
 
 export function submitSignup(payload) {
     return {
-        type: SIGNUP,
+        type: API_SIGNUP,
         payload
     }
 }
+
 
