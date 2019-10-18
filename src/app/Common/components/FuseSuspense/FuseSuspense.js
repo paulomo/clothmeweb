@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {FuseLoading} from 'app/Common';
+import {Loading} from 'app/Common';
 
 /**
  * React Suspense defaults
@@ -8,7 +8,7 @@ import {FuseLoading} from 'app/Common';
  */function FuseSuspense(props)
 {
     return (
-        <React.Suspense fallback={<FuseLoading {...props.loadingProps} />}>
+        <React.Suspense fallback={<Loading {...props.loadingProps} />}>
             {props.children}
         </React.Suspense>
     );

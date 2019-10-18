@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Utils } from "app/Common";
-import { showMessage } from "app/store/actions/fuse";
+import { showMessage } from "app/store/actions/common";
 
 // Type of Actions
 export const GET_PRODUCT = "[E-COMMERCE APP] GET PRODUCT";

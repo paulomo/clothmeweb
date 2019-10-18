@@ -1,4 +1,4 @@
-import * as Actions from '../../actions/fuse/index';
+import * as Actions from '../../actions/common/index';
 
 const initialState = {
     foldedOpen: false,

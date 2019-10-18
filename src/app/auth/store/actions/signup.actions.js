@@ -1,10 +1,10 @@
-export const API_SIGNUP = 'API_SIGNUP';
-export const SIGNUP_ERROR = "REGISTER_ERROR";
-export const SIGNUP_SUCCESS = "REGISTER_SUCCESS";
+export const SIGNUP_REQUEST = 'SIGNUP_REQUEST';
+export const SIGNUP_USER_FAILURE = "SIGNUP_FAILURE";
+export const SIGNUP_USER_SUCCESS = "REGISTER_SUCCESS";
 
 export function submitSignup(payload) {
     return {
-        type: API_SIGNUP,
+        type: SIGNUP_REQUEST,
         payload
     }
 }

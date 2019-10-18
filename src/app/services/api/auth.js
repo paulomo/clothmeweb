@@ -1,12 +1,19 @@
-import API from './api';
-import { Endpoint } from './endpoints';
+import { userEndoint } from './endpoints';
 
-let endpoint = Endpoint();
-
-export const createUser = async (data) => {
-    const url = endpoint.createUser;
+export const createUser = async (user) => {
+    const url = userEndoint.createUser;
     try {
-        const user = await API.post(url, data);
+        const user = await API.post(url, user);
+        return user.data;
+    }catch(error) {
+        return error.data;
+    }
+}
+
+export const updateUser = async (id) => {
+    const url = userEndoint.updateUser;
+    try {
+        const user = await API.post(url, id);
         return user.data;
     }catch(error) {
         return error.data;
@@ -14,7 +21,7 @@ export const createUser = async (data) => {
 }
 
 export const disableUser = (id) => {
-    const url = endpoint.disableUser;
+    const url = userEndoint.disableUser;
     try {
         const result = await API.post(url, id);
         return result.data;
@@ -24,7 +31,7 @@ export const disableUser = (id) => {
 }
 
 export const enableUser = (id) => {
-    const url = endpoint.enableUser;
+    const url = userEndoint.enableUser;
     try {
         const result = await API.post(url, id);
         return result.data;

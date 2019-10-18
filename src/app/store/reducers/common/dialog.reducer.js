@@ -1,4 +1,4 @@
-import * as Actions from 'app/store/actions/fuse';
+import * as Actions from 'app/store/actions/common';
 
 const initialState = {
     state  : false,

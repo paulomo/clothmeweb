@@ -1,13 +1,10 @@
-import { setUserData } from "./user.actions";
-import * as Actions from "app/store/actions";
-
-export const SIGNIN = "SIGNIN";
-export const SIGNIN_ERROR = "LOGIN_ERROR";
-export const SIGNIN_SUCCESS = "LOGIN_SUCCESS";
+export const SIGNIN_REQUEST = "SIGNIN_REQUEST";
+export const SIGNIN_USER_FAILURE = "SIGNIN_ERROR";
+export const SIGNIN_USER_SUCCESS = "SIGNIN_SUCCESS";
 
 export function submitSignin(payload) {
     return {
-        type: SIGNIN,
+        type: SIGNIN_REQUEST,
         payload
     }
 }

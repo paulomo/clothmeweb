@@ -11,14 +11,14 @@ const initialState = {
 const signin = function (state = initialState, action) {
     switch ( action.type )
     {
-        case Actions.SIGNIN_SUCCESS:
+        case Actions.SIGNIN_USER_SUCCESS:
         {
             return {
                 ...initialState,
                 success: true
             };
         }
-        case Actions.SIGNIN_ERROR:
+        case Actions.SIGNIN_USER_FAILURE:
         {
             return {
                 success: false,

@@ -3,7 +3,7 @@ import {Typography, LinearProgress} from '@material-ui/core';
 import {useTimeout} from 'app/Common/hooks';
 import PropTypes from 'prop-types';
 
-function FuseLoading(props)
+function Loading(props)
 {
     const [showLoading, setShowLoading] = useState(!props.delay);
 
@@ -24,12 +24,12 @@ function FuseLoading(props)
     );
 }
 
-FuseLoading.propTypes = {
+Loading.propTypes = {
     delay: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
 };
 
-FuseLoading.defaultProps = {
+Loading.defaultProps = {
     delay: false
 };
 
-export default FuseLoading;
+export default Loading;

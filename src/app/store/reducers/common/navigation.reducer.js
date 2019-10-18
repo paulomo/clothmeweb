@@ -1,4 +1,4 @@
-import * as Actions from '../../actions/fuse/index';
+import * as Actions from '../../actions/common/index';
 import navigationConfig from 'app/configs/navigationConfig';
 
 const initialState = navigationConfig;

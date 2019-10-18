@@ -1,5 +1,5 @@
 import React from 'react';
-import {Icon, Input, Paper, Typography} from '@material-ui/core';
+import { Typography}  from '@material-ui/core';
 import {FuseAnimate} from 'app/Common';
 import {Link} from 'react-router-dom';
 
@@ -21,19 +21,6 @@ function Error404Page()
                         Sorry but we could not find the page you are looking for
                     </Typography>
                 </FuseAnimate>
-
-                <Paper className="flex items-center w-full h-56 p-16 mt-48 mb-16" elevation={1}>
-                    <Icon color="action">search</Icon>
-                    <Input
-                        placeholder="Search for anything"
-                        className="pl-16"
-                        disableUnderline
-                        fullWidth
-                        inputProps={{
-                            'aria-label': 'Search'
-                        }}
-                    />
-                </Paper>
 
                 <Link className="font-medium" to="/apps/dashboards/project">Go back to dashboard</Link>
             </div>

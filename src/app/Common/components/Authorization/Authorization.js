@@ -5,7 +5,7 @@ import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import AppContext from 'app/AppContext';
 
-class FuseAuthorization extends Component {
+class Authorization extends Component {
 
     constructor(props, context)
     {
@@ -94,6 +94,6 @@ function mapStateToProps({auth})
     }
 }
 
-FuseAuthorization.contextType = AppContext;
+Authorization.contextType = AppContext;
 
-export default withRouter(connect(mapStateToProps)(FuseAuthorization));
+export default withRouter(connect(mapStateToProps)(Authorization));

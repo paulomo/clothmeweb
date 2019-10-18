@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {showMessage} from 'app/store/actions/fuse';
+import {showMessage} from 'app/store/actions/common';
 
 export const GET_ORDER = '[E-COMMERCE APP] GET ORDER';
 export const SAVE_ORDER = '[E-COMMERCE APP] SAVE ORDER';

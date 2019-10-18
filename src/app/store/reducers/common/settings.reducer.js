@@ -1,5 +1,5 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-import * as Actions from "app/store/actions/fuse/index";
+import * as Actions from "app/store/actions/common";
 import FuseLayoutConfigs from "app/layouts/FuseLayoutConfigs";
 import SettingsConfig from "app/configs/settingsConfig";
 import ThemesConfig from "app/configs/themesConfig";

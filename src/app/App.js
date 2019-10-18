@@ -1,6 +1,6 @@
 import "@fake-db";
 import React from "react";
-import { FuseAuthorization, FuseLayout, FuseTheme } from "app/Common";
+import { Authorization, FuseLayout, FuseTheme } from "app/Common";
 import Provider from "react-redux/es/components/Provider";
 import { Router } from "react-router-dom";
 import jssExtend from "jss-extend";
@@ -31,11 +31,11 @@ const App = () => {
         <Provider store={store}>
           <Auth>
             <Router history={history}>
-              <FuseAuthorization>
+              <Authorization>
                 <FuseTheme>
                   <FuseLayout />
                 </FuseTheme>
-              </FuseAuthorization>
+              </Authorization>
             </Router>
           </Auth>
         </Provider>
