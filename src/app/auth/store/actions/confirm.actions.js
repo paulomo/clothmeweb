@@ -1,10 +1,10 @@
-export const API_CONFIRMSIGNUP = 'API_CONFIRMSIGNUP';
-export const CONFIRMSIGNUP_ERROR = "REGISTER_ERROR";
-export const CONFIRMSIGNUP_SUCCESS = "REGISTER_SUCCESS";
+export const CONFIRM_SIGNUP_REQUEST = 'CONFIRM_SIGNUP_REQUEST';
+export const CONFIRM_SIGNUP_FAILURE = "CONFIRM_SIGNUP_FAILURE";
+export const CONFIRM_SIGNUP_SUCCESS = "CONFIRM_SIGNUP_SUCCESS";
 
 export function confirmSignup(payload) {
     return {
-        type: API_CONFIRMSIGNUP,
+        type: CONFIRM_SIGNUP_REQUEST,
         payload
     }
 }

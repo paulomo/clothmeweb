@@ -124,7 +124,7 @@ function SignupContainer(props) {
                   endAdornment: (
                     <InputAdornment position="end">
                       <Icon className="text-20" color="action">
-                        email
+                        vpn_key
                       </Icon>
                     </InputAdornment>
                   )

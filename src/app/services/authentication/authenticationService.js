@@ -59,8 +59,8 @@ export const confirmSignupService = async user => {
 export const signinUserService = async user => {
   const { email, password } = user;
   try {
-    const user = await Auth.signIn(email, password);
-    return user;
+    const response = await Auth.signIn(email, password);
+    return response;
   } catch (error) {
     return error;
   }
@@ -98,7 +98,6 @@ export const forgotPassword = async user => {
 
   }
   // Collect confirmation code and new password, then
-  const user = await Auth.forgotPasswordSubmit(email, code, new_password)
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+  // const response = await Auth.forgotPasswordSubmit(email, code, new_password)
+  // return response;
 };

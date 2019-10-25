@@ -1,6 +1,7 @@
 import { userEndoint } from './endpoints';
 import API from './api';
 
+
 export const createUser = async (user) => {
     const url = userEndoint.createUser;
     try {
@@ -21,7 +22,7 @@ export const updateUser = async (id) => {
     }
 }
 
-export const disableUser = (id) => {
+export const disableUser = async (id) => {
     const url = userEndoint.disableUser;
     try {
         const response = await API.post(url, id);
@@ -31,7 +32,7 @@ export const disableUser = (id) => {
     }
 }
 
-export const enableUser = (id) => {
+export const enableUser = async (id) => {
     const url = userEndoint.enableUser;
     try {
         const response = await API.post(url, id);
