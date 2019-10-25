@@ -4,6 +4,7 @@ import ConfirmSignup from "../confirm-signup/ConfirmSignup";
 import { connect } from "react-redux";
 import * as actions from "app/auth/store/actions";
 import { FuseAnimate } from "app/Common";
+import useWindowWidth from '../../../Common/hooks/useWindow';
 
 class Signup extends Component {
   constructor(props) {
@@ -18,7 +19,9 @@ class Signup extends Component {
         plan: "",
         confirmationCode: ""
       },
-      isFormValid: false
+      isFormValid: false,
+      // imageUrl: useWindowWidth() >= 650 ? desktopImage : mobileImage,
+      // style={{backgroundImage: `url(${imageUrl})` }}
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
