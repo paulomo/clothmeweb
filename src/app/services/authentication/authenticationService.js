@@ -2,78 +2,58 @@ import { Auth } from "aws-amplify";
 import * as auth from "../api/index";
 
 export const signupUserService = async user => {
-  const {
-    email,
-    password,
-    firstname,
-    lastname,
-    gender,
-    birthdate,
-    phoneNUmber,
-    companyName,
-    companyPlan
-  } = user;
+  const { email, password, firstname, lastname, companyName, plan } = user;
   try {
-    const user = await Auth.signUp({
+    const response = await Auth.signUp({
       username: email,
       password: password,
       attributes: {
         email: email,
-        phone_number: phoneNUmber, // E.164 number convention
         given_name: firstname,
         family_name: lastname,
-        gender: gender,
-        birthdate: birthdate,
         company_name: companyName,
         role: "headOfficeAdmin",
         location: "headOffice",
-        plan: companyPlan
+        plan: plan
       }
     });
-    return user;
+    return response;
   } catch (error) {
     return error;
   }
 };
 
 export const signupUserServiceAxios = async user => {
-  const {
-    email,
-    password,
-    firstname,
-    lastname,
-    gender,
-    birthdate,
-    phoneNUmber,
-    companyName,
-    companyPlan
-  } = user;
+  const { email, password, firstname, lastname, companyName, plan } = user;
   try {
-    const user = await auth.createUser({
+    const userResponse = await auth.createUser({
       username: email,
       password: password,
       attributes: {
         email: email,
-        phone_number: phoneNUmber, // E.164 number convention
         given_name: firstname,
         family_name: lastname,
-        gender: gender,
-        birthdate: birthdate,
         company_name: companyName,
         role: "headOfficeAdmin",
         location: "headOffice",
-        plan: companyPlan
+        plan: plan
       }
-    })
-    const jsonObject = await JSON.stringify(user);
-    return jsonObject;
+    });
+    const response = await JSON.stringify(userResponse);
+    return response;
   } catch (error) {
     return error;
   }
 };
 
 export const confirmSignupService = async user => {
-  const { email, code } = user;
+  const { username, code } = user;
+  try {
+    const response = Auth.confirmSignUp(username, code);
+    return response;
+  } catch (error) {
+    return error;
+  }
 };
 
 export const signinUserService = async user => {
@@ -101,15 +81,22 @@ export const signoutGloballyUserService = async () => {
 
 export const resetPassword = async user => {
   const { oldPassword, newPassword } = user;
-  const user = await Auth.currentAuthenticatedUser();
-  const newPassword = await Auth.changePassword(user, oldPassword, newPassword);
-  return newPassword;
+  try {
+    const user = await Auth.currentAuthenticatedUser();
+    const password = await Auth.changePassword(user, oldPassword, newPassword);
+    return password;
+  }catch(error){
+    return error;
+  }
 };
 
 export const forgotPassword = async user => {
   const { email } = user;
-  const email = await Auth.forgotPassword(email);
+  try {
+    const email = await Auth.forgotPassword(email);
+  }catch(error){
 
+  }
   // Collect confirmation code and new password, then
   const user = await Auth.forgotPasswordSubmit(email, code, new_password)
     .then(data => console.log(data))

@@ -1,27 +1,30 @@
 import * as Actions from "../actions";
 
-const initialState2 = {
-  success: false,
-  data: {
-    username: null,
-    password: null
-  }
-};
-
 const initialState = {
   data: [],
+  newUser: null,
   loading: false,
-  error: ''
+  error: ""
 };
 
 const signup = function(state = initialState, action) {
+  console.log("signup reducer");
+
   let response = action.response;
 
   switch (action.type) {
+    case Actions.SIGNUP_REQUEST: {
+      return {
+        ...state,
+        loading: false,
+        error: ""
+      };
+    }
     case Actions.SIGNUP_USER_SUCCESS: {
       return {
         ...state,
         data: response,
+        newUser: response.data.userId,
         loading: false
       };
     }
@@ -29,6 +32,7 @@ const signup = function(state = initialState, action) {
       return {
         ...state,
         loading: false,
+        newUser: null,
         error: response
       };
     }

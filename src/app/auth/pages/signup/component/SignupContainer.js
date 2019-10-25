@@ -7,7 +7,13 @@ import { FuseAnimate } from "app/Common";
 import { Link } from "react-router-dom";
 
 function SignupContainer(props) {
-  const { field, isFormValid, disableButton, enableButton, handleSubmit } = props;
+  const {
+    field,
+    isFormValid,
+    disableButton,
+    enableButton,
+    handleSubmit
+  } = props;
 
   return (
     <div className="w-full">
@@ -80,9 +86,9 @@ function SignupContainer(props) {
               <TextFieldFormsy
                 className="mb-16"
                 type="text"
-                name="email"
+                name="username"
                 label="Email"
-                value={field.email}
+                value={field.username}
                 validations="isEmail"
                 validationErrors={{
                   isEmail: "Please enter a valid email"
@@ -102,8 +108,35 @@ function SignupContainer(props) {
 
               <TextFieldFormsy
                 className="mb-16"
+                type="password"
+                name="passsword"
+                label="Password"
+                value={field.username}
+                validations={{
+                  matchRegexp: new RegExp(
+                    "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})"
+                  )
+                }}
+                validationErrors={{
+                  matchRegexp: "Please enter a valid password"
+                }}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <Icon className="text-20" color="action">
+                        email
+                      </Icon>
+                    </InputAdornment>
+                  )
+                }}
+                variant="outlined"
+                required
+              />
+
+              <TextFieldFormsy
+                className="mb-16"
                 type="text"
-                name="displayName"
+                name="companyName"
                 label="Company Name"
                 value={field.company_name}
                 validations={{

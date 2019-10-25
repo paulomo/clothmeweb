@@ -5,10 +5,8 @@ import * as types from '../actions'
 
 export function* signupSaga(payload) {
   try {
-    const response = yield call(signupUserServiceAxios, payload);
-    yield [
-      put({ type: types.SIGNUP_USER_SUCCESS, response })
-    ];
+    const response = yield call(signupUserService, payload);
+    yield put({ type: types.SIGNUP_USER_SUCCESS, response })
   } catch(error) {
     yield put({ type: types.SIGNUP_USER_FAILURE, error });
   }

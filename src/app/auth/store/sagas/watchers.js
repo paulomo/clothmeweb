@@ -5,6 +5,7 @@ import { signupSaga } from './signup.saga'
 import * as types from '../actions';
 
 export default function* watchUserAuthentication() {
+  console.log("watcher");
   yield takeLatest(types.SIGNUP_REQUEST, signupSaga);
   yield takeLatest(types.SIGNIN_REQUEST, signinSaga);
   // yield takeLatest(types.SIGNOUT_REQUEST, signupSaga);

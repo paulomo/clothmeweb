@@ -10,21 +10,14 @@ class Signup extends Component {
     super(props);
     this.state = {
       field: {
-        email: "",
+        username: "",
         password: "",
-        phone_number: "", // E.164 number convention
         given_name: "",
         family_name: "",
-        gender: "",
-        birthdate: "",
         company_name: "",
-        role: "headOfficeAdmin",
-        location: "headOffice",
         plan: "",
         confirmationCode: ""
       },
-      newUser: null,
-      isLoading: false,
       isFormValid: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -56,7 +49,7 @@ class Signup extends Component {
         <FuseAnimate animation="transition.expandIn">
           <img className="" src="" alt="jfeufeuhfeuhfu" />
         </FuseAnimate>
-        {newUser === null ? (
+        {newUser !== null ? (
           <SignupContainer
             field={field}
             isFormValid={isFormValid}
@@ -71,6 +64,14 @@ class Signup extends Component {
     );
   }
 };
+const mapStateToProps = (state) => {
+  return {
+    data: state.auth.signup.data,
+    loading: state.auth.signup.loading,
+    newUser: state.auth.signup.newUser,
+    error: state.auth.signup.error
+  }
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -80,6 +81,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Signup);
