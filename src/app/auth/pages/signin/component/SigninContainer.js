@@ -6,6 +6,7 @@ import { useForm } from 'app/Common/hooks';
 import * as authActions from 'app/auth/store/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Auth } from 'aws-amplify';
 
 
 function SigninContainer(props)
@@ -42,9 +43,15 @@ function SigninContainer(props)
         setIsFormValid(true);
     }
 
-    function handleSubmit(model)
+    async function handleSubmit(model)
     {
-        dispatch(authActions.submitSignin(model));
+        // dispatch(authActions.submitSignin(model));
+        try {
+            const user = await Auth.signIn(model.username, model.password);
+            console.log(user);
+        }catch(error){
+            console.log(error);
+        }
         console.log(model);
     }
 
@@ -60,7 +67,7 @@ function SigninContainer(props)
                 <TextFieldFormsy
                     className="mb-16"
                     type="text"
-                    name="email"
+                    name="username"
                     label="Email"
                     validations={{
                         minLength: 4

@@ -31,9 +31,6 @@ const store = createStore(createReducer(), enhancer);
 
 store.asyncReducers = {};
 
-// then run the saga
-sagaMiddleware.run(rootSaga);
-
 // injectReducer
 export const injectReducer = (key, reducer) => {
   if (store.asyncReducers[key]) {
@@ -41,7 +38,10 @@ export const injectReducer = (key, reducer) => {
   }
   store.asyncReducers[key] = reducer;
   store.replaceReducer(createReducer(store.asyncReducers));
+
   return store;
 };
 
+  // then run the saga
+  sagaMiddleware.run(rootSaga);
 export default store;

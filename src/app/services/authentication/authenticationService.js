@@ -2,20 +2,21 @@ import { Auth } from "aws-amplify";
 import * as auth from "../api/index";
 
 export const signupUserService = async user => {
-  const { email, password, firstname, lastname, companyName, plan } = user;
+  const { username, password, firstname, lastname, companyName, plan } = user;
   try {
     const response = await Auth.signUp({
-      username: email,
-      password: password,
+      username,
+      password,
       attributes: {
-        email: email,
+        email: username,
         given_name: firstname,
         family_name: lastname,
         company_name: companyName,
         role: "headOfficeAdmin",
         location: "headOffice",
         plan: plan
-      }
+      },
+      validationData: [] 
     });
     return response;
   } catch (error) {

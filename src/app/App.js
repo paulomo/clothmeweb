@@ -8,8 +8,6 @@ import history from "@history";
 import { Auth } from "./auth";
 import store from "./store";
 import AppContext from "./AppContext";
-import Amplify from 'aws-amplify';
-import awsConfig from './services/backendConfig/awsConfig';
 import routes from "./configs/routesConfig";
 import { create } from "jss";
 import {
@@ -25,7 +23,6 @@ const jss = create({
 });
 
 const generateClassName = createGenerateClassName();
-Amplify.configure(awsConfig);
 
 
 const App = () => {

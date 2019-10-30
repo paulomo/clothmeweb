@@ -16,7 +16,7 @@ const signup = function(state = initialState, action) {
     case Actions.SIGNUP_REQUEST: {
       return {
         ...state,
-        loading: false,
+        loading: true,
         error: ""
       };
     }

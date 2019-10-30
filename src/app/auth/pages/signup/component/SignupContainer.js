@@ -12,6 +12,7 @@ function SignupContainer(props) {
     isFormValid,
     disableButton,
     enableButton,
+    handleChange,
     handleSubmit
   } = props;
 
@@ -39,6 +40,7 @@ function SignupContainer(props) {
                 name="firstName"
                 label="First Name"
                 value={field.given_name}
+                onChange={handleChange}
                 validations={{
                   minLength: 4
                 }}
@@ -64,6 +66,7 @@ function SignupContainer(props) {
                 name="lastName"
                 label="Last Name"
                 value={field.family_name}
+                onChange={handleChange}
                 validations={{
                   minLength: 4
                 }}
@@ -88,7 +91,8 @@ function SignupContainer(props) {
                 type="text"
                 name="username"
                 label="Email"
-                value={field.username}
+                value={field.email}
+                onChange={handleChange}
                 validations="isEmail"
                 validationErrors={{
                   isEmail: "Please enter a valid email"
@@ -111,7 +115,8 @@ function SignupContainer(props) {
                 type="password"
                 name="passsword"
                 label="Password"
-                value={field.username}
+                value={field.password}
+                onChange={handleChange}
                 validations={{
                   matchRegexp: new RegExp(
                     "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})"
@@ -139,6 +144,7 @@ function SignupContainer(props) {
                 name="companyName"
                 label="Company Name"
                 value={field.company_name}
+                onChange={handleChange}
                 validations={{
                   minLength: 4
                 }}
