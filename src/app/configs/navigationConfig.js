@@ -13,35 +13,36 @@ const navigationConfig = [
     title: "Product",
     type: "collapse",
     icon: "shopping_basket",
-    url: "/apps/e-commerce",
     children: [
       {
-        id: "e-commerce-products",
+        id: "products",
         title: "Products",
         type: "item",
+        // url: "/apps/products",
         url: "/apps/e-commerce/products",
         exact: true
       },
       {
-        id: "e-commerce-new-product",
+        id: "new-product",
         title: "New Product",
         type: "item",
+        // url: "/apps/products/new",
         url: "/apps/e-commerce/products/new",
         exact: true
       }
     ]
   },
   {
-    id: "e-commerce-sale",
-    title: "Sale",
+    id: "sales",
+    title: "Order",
     type: "collapse",
     icon: "shopping_cart",
-    url: "/apps/e-commerce",
     children: [
       {
-        id: "e-commerce-pending",
+        id: "e-commerce-sale",
         title: "Orders",
         type: "item",
+        // url: "/apps/orders",
         url: "/apps/e-commerce/orders",
         exact: true
       }

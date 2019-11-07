@@ -8,6 +8,8 @@ import { ClassicSearchPageConfig } from "./search/classic/ClassicSearchPageConfi
 import { ModernSearchPageConfig } from "./search/modern/ModernSearchPageConfig";
 import { AnalyticsDashboardAppConfig } from "./dashboards/analytics/AnalyticsDashboardAppConfig";
 import { ProjectDashboardAppConfig } from "./dashboards/project/ProjectDashboardAppConfig";
+// import { OrderPageConfig } from "./order/OrderPageConfg";
+// import { ProductPageConfig } from "./product/ProductPageConfig";
 import { ECommerceAppConfig } from "./e-commerce/ECommerceAppConfig";
 
 export const pagesConfigs = [
@@ -21,5 +23,7 @@ export const pagesConfigs = [
   ModernSearchPageConfig,
   AnalyticsDashboardAppConfig,
   ProjectDashboardAppConfig,
-  ECommerceAppConfig,
+  // OrderPageConfig,
+  // ProductPageConfig,
+  ECommerceAppConfig
 ];
