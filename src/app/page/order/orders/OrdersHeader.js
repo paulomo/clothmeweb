@@ -38,7 +38,7 @@ function OrdersHeader(props)
                                 className="flex flex-1"
                                 disableUnderline
                                 fullWidth
-                                // value={searchText}
+                                value={searchText}
                                 inputProps={{
                                     'aria-label': 'Search'
                                 }}

@@ -1,10 +1,11 @@
 import axios from 'axios';
 
+// Set config defaults when creating the instance
 const API = axios.create({
-  baseURL: `https://api.getclothme.com`,
-  timeout: 1000,
-  headers: {'X-Custom-Header': 'foobar'}
+  baseURL: `https://api.getclothme.io`,
 });
+
+
 
 export default API;
 

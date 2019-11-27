@@ -1,104 +1,72 @@
-import { Auth } from "aws-amplify";
-import * as auth from "../api/index";
+import { authEndpoint } from '../api/endpoints';
+import axios from 'axios';
 
-export const signupUserService = async user => {
-  const { username, password, firstname, lastname, companyName, plan } = user;
+
+/**
+ * SIGNUP
+ * @param {*} user  is an object
+ * @returns a JSON DATA or ERROR
+ */
+export const signUp = async (user) => {
+    const url = authEndpoint.signUpUser;
+    try {
+        const userResponse = await axios.post(url, user);
+        const response = await JSON.stringify(userResponse);
+        console.log(`response: ${response}`);
+        return response.data;
+    }catch(error) {
+        const errorResponse = await JSON.stringify(error);
+        console.log(`errorResponse: ${errorResponse}`);
+        return errorResponse;
+    }
+}
+
+export const signIn = async (user) => {
+    const url = authEndpoint.signInUser;
+    try {
+        const response = await axios.post(url, user);
+        return response.data;
+    }catch(error) {
+        return error.data;
+    }
+}
+
+export const changePassword = async (data) => {
+    const url = authEndpoint.changePassword;
+    try {
+        const response = await axios.post(url, data);
+        return response.data;
+    }catch(error) {
+        return error.data;
+    }
+}
+
+export const resetPassword = async (data) => {
+    const url = authEndpoint.resetPassword;
+    try {
+        const response = await axios.post(url, data);
+        return response.data;
+    }catch(error) {
+        return error.data;
+    }
+}
+
+export const forgotPassword = async (data) => {
+    const url = authEndpoint.forgotPassword;
+    try {
+        const response = await axios.post(url, data);
+        return response.data;
+    }catch(error) {
+        return error.data;
+    }
+}
+
+export const signOut = async () => {
+  const url = authEndpoint.signOut;
   try {
-    const response = await Auth.signUp({
-      username,
-      password,
-      attributes: {
-        email: username,
-        given_name: firstname,
-        family_name: lastname,
-        company_name: companyName,
-        role: "headOfficeAdmin",
-        location: "headOffice",
-        plan: plan
-      },
-      validationData: [] 
-    });
-    return response;
-  } catch (error) {
-    return error;
+      const response = await axios.post(url);
+      return response.data;
+  }catch(error) {
+      return error.data;
   }
-};
-
-export const signupUserServiceAxios = async user => {
-  const { email, password, firstname, lastname, companyName, plan } = user;
-  try {
-    const userResponse = await auth.createUser({
-      username: email,
-      password: password,
-      attributes: {
-        email: email,
-        given_name: firstname,
-        family_name: lastname,
-        company_name: companyName,
-        role: "headOfficeAdmin",
-        location: "headOffice",
-        plan: plan
-      }
-    });
-    const response = await JSON.stringify(userResponse);
-    return response;
-  } catch (error) {
-    return error;
-  }
-};
-
-export const confirmSignupService = async user => {
-  const { username, code } = user;
-  try {
-    const response = Auth.confirmSignUp(username, code);
-    return response;
-  } catch (error) {
-    return error;
-  }
-};
-
-export const signinUserService = async user => {
-  const { email, password } = user;
-  try {
-    const response = await Auth.signIn(email, password);
-    return response;
-  } catch (error) {
-    return error;
-  }
-};
-
-export const signoutUserService = async () => {
-  const signOut = await Auth.signOut();
-  return signOut;
-};
-
-export const signoutGloballyUserService = async () => {
-  // By doing this, you are revoking all the auth tokens(id token, access token and refresh token)
-  // which means the user is signed out from all the devices
-  // Note: although the tokens are revoked, the AWS credentials will remain valid until they expire (which by default is 1 hour)
-  const signOut = await Auth.signOut({ global: true });
-  return signOut;
-};
-
-export const resetPassword = async user => {
-  const { oldPassword, newPassword } = user;
-  try {
-    const user = await Auth.currentAuthenticatedUser();
-    const password = await Auth.changePassword(user, oldPassword, newPassword);
-    return password;
-  }catch(error){
-    return error;
-  }
-};
-
-export const forgotPassword = async user => {
-  const { email } = user;
-  try {
-    const email = await Auth.forgotPassword(email);
-  }catch(error){
-
-  }
-  // Collect confirmation code and new password, then
-  // const response = await Auth.forgotPasswordSubmit(email, code, new_password)
-  // return response;
-};
+}

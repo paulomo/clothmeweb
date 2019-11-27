@@ -2,21 +2,19 @@ import React, { Component } from "react";
 import SignupContainer from "./component/SignupContainer";
 import ConfirmSignup from "../confirm-signup/ConfirmSignup";
 import { connect } from "react-redux";
-import * as actions from "app/auth/store/actions";
+import * as actions from "app/auth/store/thunk/signup.thunk";
 import { FuseAnimate } from "app/Common";
-import { Auth } from "aws-amplify";
-import useWindowWidth from "../../../Common/hooks/useWindow";
 
 class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
       field: {
-        email: "makvie@yahoo.ca",
-        password: "Pj.za8pa.",
-        given_name: "Paul",
-        family_name: "Ikhane",
-        company_name: "Petbulb",
+        email: "",
+        password: "",
+        given_name: "",
+        family_name: "",
+        company_name: "",
         plan: "",
         confirmationCode: ""
       },
@@ -28,8 +26,6 @@ class Signup extends Component {
         "Student Premium",
         "Premium"
       ]
-      // imageUrl: useWindowWidth() >= 650 ? desktopImage : mobileImage,
-      // style={{backgroundImage: `url(${imageUrl})` }}
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -53,30 +49,8 @@ class Signup extends Component {
     });
   };
 
-  async handleSubmit(event) {
+  handleSubmit(event) {
     // event.preventDefault();
-    console.log(this.state.field);
-    try {
-      const user = await Auth.signUp({
-        'username': this.state.field.email.toLowerCase(),
-        'password': this.state.field.password,
-        'attributes': {
-          'email': this.state.field.username,
-          'given_name': this.state.field.given_name,
-          'family_name': this.state.field.family_name,
-          'custom:account_name': this.state.field.company_name,
-          'custom:company_name': this.state.field.company_name,
-          'custom:tenant_id': "ewyewyvwhdvwud2323232",
-          'custom:location_id': "wjfhufhifh8r938e38yrjb",
-          'custom:role': "headOfficeAdmin",
-          'custom:location': "headOffice",
-          'custom:plan': "free"
-        }
-      });
-      console.log(user);
-    } catch (error) {
-      console.log(error);
-    }
     const payload = {
       username: this.state.field.email.toLowerCase(),
       password: this.state.field.password,
@@ -85,13 +59,12 @@ class Signup extends Component {
       companyName: this.state.field.company_name,
       plan: "free"
     };
-    console.log(payload);
-    // this.props.submitSignup(payload)
+    this.props.signupAsync(payload)
   }
 
   handleConfirmationSubmit = event => {
     // event.preventDefault();
-    this.props.ConfirmSignup(event);
+    // this.props.ConfirmSignup(event);
   };
 
   render() {
@@ -128,8 +101,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    submitSignup: payload => dispatch(actions.submitSignup(payload)),
-    confirmSignup: event => dispatch(actions.confirmSignup(event))
+    signupAsync: payload => dispatch(actions.signupAsync(payload)),
+    // confirmSignup: event => dispatch(actions.confirmSignup(event))
   };
 };
 
