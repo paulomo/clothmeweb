@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Tab, Tabs} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
-import {FusePageCarded, DemoContent} from 'Common';
+import {FusePageCarded, DemoContent} from 'app/Common';
 
 const useStyles = makeStyles({
     layoutRoot: {}

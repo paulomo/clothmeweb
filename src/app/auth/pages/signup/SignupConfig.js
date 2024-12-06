@@ -23,7 +23,7 @@ export const SignupConfig = {
       }
     }
   },
-  auth: authRoles.onlyGuest,
+
   routes: [
     {
       path: "/signup",

@@ -1,5 +1,4 @@
 import Signin from "./Signin";
-import { authRoles } from "app/auth";
 
 export const SigninConfig = {
   settings: {
@@ -23,7 +22,7 @@ export const SigninConfig = {
       }
     }
   },
-  auth: authRoles.onlyGuest,
+  
   routes: [
     {
       path: "/signin",

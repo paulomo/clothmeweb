@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Card, CardContent, Icon, Typography} from '@material-ui/core';
-import {FuseHighlight, FusePageSimple, FuseAnimate} from 'Common';
+import {FuseHighlight, FusePageSimple, FuseAnimate} from 'app/Common';
 
 function TypographyUI()
 {

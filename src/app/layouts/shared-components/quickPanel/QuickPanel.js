@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Divider, Drawer, Icon, List, ListItem, ListItemIcon, ListItemSecondaryAction, ListItemText, ListSubheader, Switch, Typography} from '@material-ui/core';
-import {FuseScrollbars} from 'Common';
+import {FuseScrollbars} from 'app/Common';
 import moment from 'moment';
 import {useSelector, useDispatch} from 'react-redux';
 import * as Actions from './store/actions/index'

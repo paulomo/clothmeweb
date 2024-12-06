@@ -1,6 +1,6 @@
 import mock from './../mock';
 import _ from 'lodash';
-import {Utils} from 'Common';
+import {Utils} from 'app/Common';
 import jwt from 'jsonwebtoken';
 
 const jwtConfig = {

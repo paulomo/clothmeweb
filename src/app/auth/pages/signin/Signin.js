@@ -1,31 +1,20 @@
 import React, { useState } from "react";
 import { Card, CardContent, Typography, Tabs, Tab } from "@material-ui/core";
-import { darken } from "@material-ui/core/styles/colorManipulator";
-import { FuseAnimate } from "Common";
+import { FuseAnimate } from "app/Common";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
-import LoginTab from "./tabs/LoginTab";
+import SigninContainer from "./component/SigninContainer";
 import { makeStyles } from "@material-ui/styles";
+import { useStyles } from "./styles";
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    background:
-      "linear-gradient(to right, " +
-      theme.palette.primary.dark +
-      " 0%, " +
-      darken(theme.palette.primary.dark, 0.5) +
-      " 100%)",
-    color: theme.palette.primary.contrastText
-  }
-}));
 
 function Signin() {
   const classes = useStyles();
   const [selectedTab, setSelectedTab] = useState(0);
 
-  function handleTabChange(event, value) {
-    setSelectedTab(value);
-  }
+  // function handleTabChange(event, value) {
+  //   setSelectedTab(value);
+  // }
 
   return (
     <div
@@ -47,23 +36,7 @@ function Signin() {
               SIGNIN
             </Typography>
 
-            <div
-              value={selectedTab}
-              onChange={handleTabChange}
-              variant="fullWidth"
-              className="mb-32"
-              icon={
-                <img
-                  className="h-40 p-4 bg-black rounded-12"
-                  src="assets/images/logos/jwt.svg"
-                  alt="firebase"
-                />
-              }
-              className="min-w-0"
-              label="JWT"
-            ></div>
-
-            <LoginTab />
+            <SigninContainer />
 
             <div className="flex flex-col items-center justify-center pt-32">
               <span className="font-medium">

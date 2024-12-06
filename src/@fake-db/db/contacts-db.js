@@ -1,5 +1,5 @@
 import mock from './../mock';
-import {Utils} from 'Common';
+import {Utils} from 'app/Common';
 import _ from 'lodash';
 
 const contactsDB = {

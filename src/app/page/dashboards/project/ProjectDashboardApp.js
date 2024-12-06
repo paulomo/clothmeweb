@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Menu, MenuItem, Hidden, Icon, IconButton, Tab, Tabs, Typography} from '@material-ui/core';
-import {FuseAnimateGroup, FusePageSimple} from 'Common';
+import {FuseAnimateGroup, FusePageSimple} from 'app/Common';
 import {useDispatch, useSelector} from 'react-redux';
 import withReducer from 'app/store/withReducer';
 import * as Actions from './store/actions'

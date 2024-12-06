@@ -2,7 +2,7 @@ import React from 'react';
 import {Card, CardContent, Icon, Typography} from '@material-ui/core';
 import {darken} from '@material-ui/core/styles/colorManipulator';
 import {makeStyles} from '@material-ui/styles';
-import {FuseAnimate} from 'Common';
+import {FuseAnimate} from 'app/Common';
 import clsx from 'clsx';
 import {Link} from 'react-router-dom';
 

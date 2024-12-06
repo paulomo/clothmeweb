@@ -13,137 +13,73 @@ const navigationConfig = [
     title: "Product",
     type: "collapse",
     icon: "shopping_basket",
-    url: "/apps/e-commerce",
     children: [
       {
-        id: "e-commerce-products",
+        id: "products",
         title: "Products",
         type: "item",
+        // url: "/apps/products",
         url: "/apps/e-commerce/products",
         exact: true
       },
       {
-        id: "e-commerce-new-product",
+        id: "new-product",
         title: "New Product",
         type: "item",
+        // url: "/apps/products/new",
         url: "/apps/e-commerce/products/new",
         exact: true
       }
     ]
   },
   {
-    id: "e-commerce",
-    title: "Sale",
+    id: "sales",
+    title: "Order",
     type: "collapse",
     icon: "shopping_cart",
-    url: "/apps/e-commerce",
     children: [
       {
-        id: "e-commerce-pending",
+        id: "e-commerce-sale",
         title: "Orders",
         type: "item",
+        // url: "/apps/orders",
         url: "/apps/e-commerce/orders",
         exact: true
       }
-      //   {
-      //       'id'   : 'e-commerce-orders',
-      //       'title': 'Orders',
-      //       'type' : 'item',
-      //       'url'  : '/apps/e-commerce/orders',
-      //       'exact': true
-      //   }
     ]
   },
   {
     id: "analytics-dashboard",
     title: "Analytics",
     type: "collapse",
-    icon: "fa-analytics",
-    // url: "/apps/dashboards/analytics",
+    icon: "dashboard",
     children: [
       {
         id: "project-dashboard",
         title: "Project",
         type: "item",
-        icon: "",
         url: "/apps/dashboards/analytics"
       }
     ]
   },
   {
-    id: "company",
-    title: "Company",
-    type: "group",
-    icon: "",
+    id: "profile",
+    title: "User Profile",
+    type: "collapse",
+    icon: "person",
+    url: "/pages",
     children: [
       {
         id: "profile",
-        title: "User Profile",
-        type: "collapse",
-        icon: "person",
-        url: "/pages",
-        children: [
-          {
-            id: "profile",
-            title: "Profile",
-            type: "item",
-            url: "/pages/profile"
-          },
-          {
-            id: "chat",
-            title: "Chat",
-            type: "item",
-            url: "/apps/chat",
-            badge: {
-              title: 13,
-              bg: "rgb(9, 210, 97)",
-              fg: "#FFFFFF"
-            }
-          },
-          {
-            id: "todo",
-            title: "To-Do",
-            type: "item",
-            url: "/apps/todo",
-            badge: {
-              title: 3,
-              bg: "rgb(255, 111, 0)",
-              fg: "#FFFFFF"
-            }
-          },
-          {
-            id: "notes",
-            title: "Notes",
-            type: "item",
-            url: "/apps/notes"
-          },
-          {
-            id: "calendar",
-            title: "Calendar",
-            type: "item",
-            url: "/apps/calendar"
-          },
-
-          {
-            id: "mail",
-            title: "Mail",
-            type: "item",
-            url: "/apps/mail",
-            badge: {
-              title: 25,
-              bg: "#F44336",
-              fg: "#FFFFFF"
-            }
-          }
-        ]
-      },
-
-      {
-        id: "contacts",
-        title: "Contacts",
+        title: "Profile",
         type: "item",
-        icon: "people_outline",
-        url: "/apps/contacts/all"
+        url: "/pages/profile"
+      },
+      {
+        id: "message",
+        title: "Message",
+        type: "item",
+        url: "/apps/message"
       },
       {
         id: "wallet",
@@ -173,25 +109,6 @@ const navigationConfig = [
         type: "item",
         url: "/pages/auth/reset-password"
       },
-      // {
-      //   id: "authentication-lock-screen",
-      //   title: "Lock Screen",
-      //   type: "item",
-      //   url: "/pages/auth/lock"
-      // },
-      // {
-      //   id: "authentication-mail-confirmation",
-      //   title: "Mail Confirmation",
-      //   type: "item",
-      //   url: "/pages/auth/mail-confirm"
-      // },
-      // {
-      //   id: "coming-soon",
-      //   title: "Coming Soon",
-      //   type: "item",
-      //   icon: "alarm",
-      //   url: "/pages/coming-soon"
-      // },
       {
         id: "errors",
         title: "Errors",
@@ -212,13 +129,6 @@ const navigationConfig = [
           }
         ]
       }
-      // {
-      //   id: "maintenance",
-      //   title: "Maintenance",
-      //   type: "item",
-      //   icon: "build",
-      //   url: "/pages/maintenance"
-      // }
     ]
   },
   {
@@ -236,7 +146,6 @@ const navigationConfig = [
         title: "Signin",
         type: "item",
         url: "/signin",
-        auth: authRoles.onlyGuest,
         icon: "lock"
       },
       {
@@ -244,62 +153,15 @@ const navigationConfig = [
         title: "Signup",
         type: "item",
         url: "/signup",
-        auth: authRoles.onlyGuest,
         icon: "person_add"
       },
       {
         id: "logout",
         title: "Logout",
         type: "item",
-        auth: authRoles.user,
         url: "/logout",
         icon: "exit_to_app"
       }
-      // {
-      //   id: "auth-admin-example",
-      //   title: "Admin: Auth protected page",
-      //   type: "item",
-      //   url: "/auth/admin-role-example",
-      //   icon: "security"
-      // },
-      // {
-      //   id: "only-admin-navigation-item",
-      //   title: "Nav item only for Admin",
-      //   type: "item",
-      //   auth: authRoles.admin,
-      //   url: "/auth/admin-role-example",
-      //   icon: "verified_user"
-      // },
-      // {
-      //   id: "auth-staff-example",
-      //   title: "Staff: Auth protected page",
-      //   type: "item",
-      //   url: "/auth/staff-role-example",
-      //   icon: "security"
-      // },
-      // {
-      //   id: "only-staff-navigation-item",
-      //   title: "Nav item only for Staff",
-      //   type: "item",
-      //   auth: authRoles.staff,
-      //   url: "/auth/staff-role-example",
-      //   icon: "verified_user"
-      // },
-      // {
-      //   id: "auth-guest-example",
-      //   title: "Guest: Auth protected page",
-      //   type: "item",
-      //   url: "/auth/guest-role-example",
-      //   icon: "security"
-      // },
-      // {
-      //   id: "only-guest-navigation-item",
-      //   title: "Nav item only for Guest",
-      //   type: "item",
-      //   auth: authRoles.onlyGuest,
-      //   url: "/auth/guest-role-example",
-      //   icon: "verified_user"
-      // }
     ]
   }
 ];

@@ -3,6 +3,7 @@ import { applyMiddleware, compose, createStore } from "redux";
 import createReducer from "./reducers";
 import thunk from "redux-thunk";
 import createSagaMiddleware from "redux-saga";
+import rootSaga from './sagas';
 
 /*
 Fix for Firefox redux dev tools extension
@@ -30,9 +31,6 @@ const store = createStore(createReducer(), enhancer);
 
 store.asyncReducers = {};
 
-// then run the saga
-// sagaMiddleware.run(mySaga);
-
 // injectReducer
 export const injectReducer = (key, reducer) => {
   if (store.asyncReducers[key]) {
@@ -40,7 +38,10 @@ export const injectReducer = (key, reducer) => {
   }
   store.asyncReducers[key] = reducer;
   store.replaceReducer(createReducer(store.asyncReducers));
+
   return store;
 };
 
+  // then run the saga
+  sagaMiddleware.run(rootSaga);
 export default store;
